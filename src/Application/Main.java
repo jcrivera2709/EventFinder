@@ -13,11 +13,18 @@ public class Main extends Application {
   public static StringBuilder sb = new StringBuilder();
 
   @Override
-  public void start(Stage primaryStage) throws Exception {
+  public void start(Stage stage) throws Exception {
+
     Parent root = FXMLLoader.load(getClass().getResource("bulletin.fxml"));
-    primaryStage.setTitle("Hello World");
-    primaryStage.setScene(new Scene(root, 700, 600));
-    primaryStage.show();
+
+    Scene scene = new Scene(root, 700, 600);
+    stage.setTitle("B U L L E T I N");
+    stage.setScene(scene);
+
+    scene.getStylesheets().add
+        (Main.class.getResource("style.css").toExternalForm());
+
+    stage.show();
   }
 
 
@@ -41,8 +48,7 @@ public class Main extends Application {
     String bigString = null;
 
     boolean atEndOfPage = false;
-    while (atEndOfPage)
-    {
+    while (atEndOfPage) {
       // Selenium algo that will load BS4 data
       System.out.println("click");
       pause(2);
@@ -54,8 +60,7 @@ public class Main extends Application {
     // BS algo for eventLocation
     // BS algo for eventHost
 
-    for (int i = 1; i <= LAST_ELEM; i++)
-    {
+    for (int i = 1; i <= LAST_ELEM; i++) {
 
       eventTitle = "eventTitle";
       sb.append(String.format("%s, ", eventTitle));

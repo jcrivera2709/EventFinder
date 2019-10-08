@@ -1,0 +1,6 @@
+.root {
+  -fx-background-color: linear-gradient(to bottom, #0c1b80 0%, #178027 100%);
+}
+.menu-item {
+  -fx-text-fill: linear-gradient( #0c1b80 0%, #178027 100%);
+}
