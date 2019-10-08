@@ -9,8 +9,8 @@ import java.lang.StringBuilder;
 
 public class Main extends Application {
 
-  final static int LAST_ELEM = 250; // Jose Ruiz-Ramon
-  public static StringBuilder sb = new StringBuilder(); // Jose Ruiz-Ramon
+  final static int LAST_ELEM = 250;
+  public static StringBuilder sb = new StringBuilder();
 
   @Override
   public void start(Stage primaryStage) throws Exception {
@@ -24,27 +24,28 @@ public class Main extends Application {
   public static void main(String[] args) {
 
     launch(args);
+
     String dataChunk = getEventData();
     System.out.print(dataChunk);
   }
 
-  public static String getEventData() // Jose Ruiz-Ramon
+  public static String getEventData() // method developed by Jose Ruiz-Ramon
   {
     //launch Selenium Driver
     //declare BeautifulSoup object
 
-    String eventTitle = null; // Jose Ruiz-Ramon
-    String eventDate = null; // Jose Ruiz-Ramon
-    String eventLocation = null; // Jose Ruiz-Ramon
-    String eventHost = null; // Jose Ruiz-Ramon
-    String bigString = null; // Jose Ruiz-Ramon
+    String eventTitle = null;
+    String eventDate = null;
+    String eventLocation = null;
+    String eventHost = null;
+    String bigString = null;
 
-    boolean atEndOfPage = false; // Jose Ruiz-Ramon
-    while (atEndOfPage) // Jose Ruiz-Ramon
+    boolean atEndOfPage = false;
+    while (atEndOfPage)
     {
       // Selenium algo that will load BS4 data
-      System.out.println("click"); // Jose Ruiz-Ramon
-      pause(2); // Jose Ruiz-Ramon
+      System.out.println("click");
+      pause(2);
 
     }
 
@@ -53,26 +54,26 @@ public class Main extends Application {
     // BS algo for eventLocation
     // BS algo for eventHost
 
-    for (int i = 1; i <= LAST_ELEM; i++) // Jose Ruiz-Ramon
+    for (int i = 1; i <= LAST_ELEM; i++)
     {
 
-      eventTitle = "eventTitle"; // Jose Ruiz-Ramon
-      sb.append(String.format("%s, ", eventTitle)); // Jose Ruiz-Ramon
+      eventTitle = "eventTitle";
+      sb.append(String.format("%s, ", eventTitle));
 
-      eventDate = "eventDate"; // Jose Ruiz-Ramon
-      sb.append(String.format("%s, ", eventDate)); // Jose Ruiz-Ramon;
+      eventDate = "eventDate";
+      sb.append(String.format("%s, ", eventDate));
 
-      eventLocation = "eventLocation"; // Jose Ruiz-Ramon
-      sb.append(String.format("%s, ", eventLocation)); // Jose Ruiz-Ramon
+      eventLocation = "eventLocation";
+      sb.append(String.format("%s, ", eventLocation));
 
-      eventHost = "eventHost"; // Jose Ruiz-Ramon
-      sb.append(String.format("%s\n ", eventHost)); // Jose Ruiz-Ramon
+      eventHost = "eventHost";
+      sb.append(String.format("%s\n ", eventHost));
 
     }
 
-    bigString = sb.toString(); // Jose Ruiz-Ramon
+    bigString = sb.toString();
 
-    return bigString; // Jose Ruiz-Ramon
+    return bigString;
   }
 
   public static void pause(double seconds) {
