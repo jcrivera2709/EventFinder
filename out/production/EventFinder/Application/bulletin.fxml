@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -55,5 +56,7 @@
     </Text>
     <WebView fx:id="googleMaps" layoutX="309.0" layoutY="56.0" prefHeight="303.0"
       prefWidth="322.0"/>
+    <Button fx:id="mapsButton" layoutX="111.0" layoutY="39.0" mnemonicParsing="false" text="Go to Map"
+      onAction="#handleButtonAction"/>
   </AnchorPane>
 </VBox>

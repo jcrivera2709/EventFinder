@@ -4,6 +4,9 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import java.lang.StringBuilder;
 
@@ -11,22 +14,23 @@ public class Main extends Application {
 
   final static int LAST_ELEM = 250;
   public static StringBuilder sb = new StringBuilder();
+  public Scene mainMenu, maps, graphs, events;
 
   @Override
   public void start(Stage stage) throws Exception {
 
+    // Main menu scene using bulletin.fxml and style.css
     Parent root = FXMLLoader.load(getClass().getResource("bulletin.fxml"));
-
-    Scene scene = new Scene(root, 700, 600);
+    mainMenu = new Scene(root, 700, 600);
     stage.setTitle("B U L L E T I N");
-    stage.setScene(scene);
-
-    scene.getStylesheets().add
-        (Main.class.getResource("style.css").toExternalForm());
-
+    stage.setScene(mainMenu);
+    mainMenu.getStylesheets().add(Main.class.getResource("style.css").toExternalForm());
     stage.show();
-  }
 
+    // Maps scene
+
+    // Graphs Scene
+  }
 
   public static void main(String[] args) {
 
