@@ -11,7 +11,6 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-<?import javafx.scene.web.WebView?>
 
 <VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.171"
   xmlns:fx="http://javafx.com/fxml/1" fx:controller="Application.Controller">
@@ -54,9 +53,7 @@
         <Font size="31.0"/>
       </font>
     </Text>
-    <WebView fx:id="googleMaps" layoutX="309.0" layoutY="56.0" prefHeight="303.0"
-      prefWidth="322.0"/>
-    <Button fx:id="mapsButton" layoutX="111.0" layoutY="39.0" mnemonicParsing="false" text="Go to Map"
-      onAction="#handleButtonAction"/>
+    <Button fx:id="mapsButton" layoutX="111.0" layoutY="39.0" mnemonicParsing="false"
+      onAction="#handleButtonAction" text="Go to Map"/>
   </AnchorPane>
 </VBox>
