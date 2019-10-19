@@ -12,12 +12,14 @@ public class Main extends Application {
   final static int LAST_ELEM = 250;
   public static StringBuilder sb = new StringBuilder();
   public Scene mainMenu, maps, graphs, events;
+  public static final int SCENE_WIDTH = 700;
+  public static final int SCENE_HEIGHT = 600;
 
   @Override
   public void start(Stage stage) throws Exception {
 
     // Main menu scene using bulletin.fxml and style.css
-    Parent root = FXMLLoader.load(getClass().getResource("bulletin.fxml"));
+    Parent root = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));
     mainMenu = new Scene(root, 700, 600);
     stage.setTitle("B U L L E T I N");
     stage.setScene(mainMenu);
@@ -25,8 +27,6 @@ public class Main extends Application {
     stage.show();
 
     // Maps scene
-
-
 
     // Graphs Scene
   }

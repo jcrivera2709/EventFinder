@@ -14,8 +14,8 @@ public class Controller {
 
   public Button mapsButton;
   public Button mainMenuButton;
-  public int sceneWidth = 700;
-  public int sceneHeight = 600;
+  public Button eventMenuButton;
+  public Button graphsButton;
 
   @FXML
   private WebView googleMaps = new WebView();
@@ -35,16 +35,23 @@ public class Controller {
     Stage stage;
     Parent root;
 
-    // if user presses 'Go to Maps' with fx:id mapsButton it will remove previous scene and load
-    // the maps.fxml file
+    // Based on button pressed if statement will load the selected scene.
+    // if not scene is selected the default scene will be the main menu.
     if (actionEvent.getSource() == mapsButton) {
       stage = (Stage) mapsButton.getScene().getWindow();
       root = FXMLLoader.load(getClass().getResource("map.fxml"));
+    } else if (actionEvent.getSource() == graphsButton) {
+      stage = (Stage) graphsButton.getScene().getWindow();
+      root = FXMLLoader.load(getClass().getResource("Graphs.fxml"));
+    } else if (actionEvent.getSource() == eventMenuButton) {
+      stage = (Stage) eventMenuButton.getScene().getWindow();
+      root = FXMLLoader.load(getClass().getResource("bulletin.fxml"));
     } else {
       stage = (Stage) mainMenuButton.getScene().getWindow();
-      root = FXMLLoader.load(getClass().getResource("bulletin.fxml"));
+      root = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));
     }
-    Scene scene = new Scene(root, sceneWidth, sceneHeight);
+
+    Scene scene = new Scene(root, Main.SCENE_WIDTH, Main.SCENE_HEIGHT);
     stage.setScene(scene);
     scene.getStylesheets().add(Main.class.getResource("style.css").toExternalForm());
     stage.show();

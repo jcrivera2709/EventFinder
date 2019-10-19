@@ -1,9 +1,11 @@
 .root {
   -fx-background-color: linear-gradient(to bottom, #0c1b80 0%, #178027 100%);
 }
+
 .menu-bar {
   -fx-text-fill: #0c1b80;
 }
+
 #mapsButton {
   -fx-text-fill: #178027;
   -fx-font-size: 15pt;
@@ -12,10 +14,11 @@
   -fx-background-radius: 20;
   -fx-padding: 5;
 }
-/* code below this doesnt work yet */
+
 #googleMaps {
   -fx-background-color: linear-gradient(to bottom, #0c1b80 0%, #178027 100%);
 }
+
 .tab-pane * .tab-pane-background {
   -fx-background-color: #0c1b80;
 }
