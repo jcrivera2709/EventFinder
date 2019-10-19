@@ -15,6 +15,34 @@
   -fx-padding: 5;
 }
 
+#eventMenuButton {
+  -fx-text-fill: #178027;
+  -fx-font-size: 15pt;
+  -fx-background-color: lightgreen;
+  -fx-border-radius: 20;
+  -fx-background-radius: 20;
+  -fx-padding: 5;
+}
+
+#graphsButton {
+  -fx-text-fill: #178027;
+  -fx-font-size: 15pt;
+  -fx-background-color: lightgreen;
+  -fx-border-radius: 20;
+  -fx-background-radius: 20;
+  -fx-padding: 5;
+}
+
+#mainMenuButton {
+  -fx-text-fill: #178027;
+  -fx-font-size: 15pt;
+  -fx-background-color: lightgreen;
+  -fx-border-radius: 20;
+  -fx-background-radius: 20;
+  -fx-padding: 5;
+}
+
+/* code below this doesnt work yet */
 #googleMaps {
   -fx-background-color: linear-gradient(to bottom, #0c1b80 0%, #178027 100%);
 }

@@ -42,10 +42,9 @@
       <MenuItem mnemonicParsing="false" text="Unselect All"/>
     </Menu>
   </MenuBar>
-  <AnchorPane
-    VBox.vgrow="ALWAYS">
-    <ListView layoutX="44.0" layoutY="78.0" prefHeight="270.0" prefWidth="257.0"/>
-    <Slider layoutX="263.0" layoutY="105.0" orientation="VERTICAL" prefHeight="181.0"
+  <AnchorPane prefHeight="438.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
+    <ListView layoutX="51.0" layoutY="66.0" prefHeight="270.0" prefWidth="470.0"/>
+    <Slider layoutX="473.0" layoutY="110.0" orientation="VERTICAL" prefHeight="181.0"
       prefWidth="16.0"/>
     <Text fill="#1bd14a" layoutX="271.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0"
       text="Bulletin ">
@@ -53,7 +52,9 @@
         <Font size="31.0"/>
       </font>
     </Text>
-    <Button fx:id="mapsButton" layoutX="111.0" layoutY="39.0" mnemonicParsing="false"
+    <Button fx:id="mapsButton" layoutX="533.0" layoutY="323.0" mnemonicParsing="false"
       onAction="#handleButtonAction" text="Go to Map"/>
+    <Button fx:id="mainMenuButton" layoutX="533.0" layoutY="266.0" mnemonicParsing="false"
+      onAction="#handleButtonAction" text="Go to Menu"/>
   </AnchorPane>
 </VBox>

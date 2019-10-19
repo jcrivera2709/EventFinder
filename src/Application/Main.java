@@ -10,25 +10,20 @@ import java.lang.StringBuilder;
 public class Main extends Application {
 
   final static int LAST_ELEM = 250;
-  public static StringBuilder sb = new StringBuilder();
-  public Scene mainMenu, maps, graphs, events;
-  public static final int SCENE_WIDTH = 700;
-  public static final int SCENE_HEIGHT = 600;
+  private static StringBuilder sb = new StringBuilder();
+  static final int SCENE_WIDTH = 600;
+  static final int SCENE_HEIGHT = 600;
 
   @Override
   public void start(Stage stage) throws Exception {
 
     // Main menu scene using bulletin.fxml and style.css
     Parent root = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));
-    mainMenu = new Scene(root, 700, 600);
+    Scene mainMenu = new Scene(root, SCENE_WIDTH, SCENE_HEIGHT);
     stage.setTitle("B U L L E T I N");
     stage.setScene(mainMenu);
     mainMenu.getStylesheets().add(Main.class.getResource("style.css").toExternalForm());
     stage.show();
-
-    // Maps scene
-
-    // Graphs Scene
   }
 
   public static void main(String[] args) {
@@ -91,5 +86,4 @@ public class Main extends Application {
     }
 
   }
-
 }

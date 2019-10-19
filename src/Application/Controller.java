@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.BarChart;
 import javafx.scene.control.Button;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
@@ -16,12 +17,14 @@ public class Controller {
   public Button mainMenuButton;
   public Button eventMenuButton;
   public Button graphsButton;
+  public BarChart barChart;
 
   @FXML
   private WebView googleMaps = new WebView();
 
   public void initialize() {
 
+    //currently has hard coded long, lat, and zoom
     WebEngine engine = googleMaps.getEngine();
     double longitude = 26.4556419;
     double latitude = -81.768879;
@@ -51,6 +54,7 @@ public class Controller {
       root = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));
     }
 
+    // Gets root from if statement scene width and height are both defined in main.
     Scene scene = new Scene(root, Main.SCENE_WIDTH, Main.SCENE_HEIGHT);
     stage.setScene(scene);
     scene.getStylesheets().add(Main.class.getResource("style.css").toExternalForm());
