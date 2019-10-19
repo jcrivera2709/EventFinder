@@ -1,10 +1,13 @@
 package Application;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
 public class Controller {
@@ -14,8 +17,17 @@ public class Controller {
   public int sceneWidth = 700;
   public int sceneHeight = 600;
 
+  @FXML
+  private WebView googleMaps = new WebView();
+
   public void initialize() {
 
+    WebEngine engine = googleMaps.getEngine();
+    double longitude = 26.4556419;
+    double latitude = -81.768879;
+    double zoom = 14;
+    String zoomString = zoom + "z";
+    engine.load("https://www.google.com/maps/@" + longitude + "," + latitude + "," + zoomString);
   }
 
   public void handleButtonAction(ActionEvent actionEvent) throws Exception {
@@ -34,6 +46,7 @@ public class Controller {
     }
     Scene scene = new Scene(root, sceneWidth, sceneHeight);
     stage.setScene(scene);
+    scene.getStylesheets().add(Main.class.getResource("style.css").toExternalForm());
     stage.show();
   }
 }
