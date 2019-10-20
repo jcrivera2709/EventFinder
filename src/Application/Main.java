@@ -4,6 +4,10 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.stage.Stage;
 import java.lang.StringBuilder;
 
@@ -18,6 +22,7 @@ public class Main extends Application {
   public void start(Stage stage) throws Exception {
 
     // Main menu scene using bulletin.fxml and style.css
+    // Sets the first scene for the program the following scenes are found in the controller
     Parent root = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));
     Scene mainMenu = new Scene(root, SCENE_WIDTH, SCENE_HEIGHT);
     stage.setTitle("B U L L E T I N");

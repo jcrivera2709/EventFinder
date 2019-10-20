@@ -6,6 +6,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
@@ -13,16 +16,34 @@ import javafx.stage.Stage;
 
 public class Controller {
 
+  // All the different Buttons
   public Button mapsButton;
   public Button mainMenuButton;
   public Button eventMenuButton;
   public Button graphsButton;
-  public BarChart barChart;
+
+  // Bar chart
+  public CategoryAxis xAxis = new CategoryAxis();
+  public NumberAxis yAxis = new NumberAxis();
+  public BarChart<String, Number> barChart = new BarChart<>(xAxis, yAxis);
 
   @FXML
   private WebView googleMaps = new WebView();
 
   public void initialize() {
+
+    xAxis.setLabel("Categories");
+    yAxis.setLabel("Number of Events");
+
+    XYChart.Series series1 = new XYChart.Series();
+    series1.setName("2003");
+    series1.getData().add(new XYChart.Data("Cats", 100.34));
+    series1.getData().add(new XYChart.Data("Dogs", 50.82));
+    series1.getData().add(new XYChart.Data("Horses", 35));
+    series1.getData().add(new XYChart.Data("Cows", 66));
+    series1.getData().add(new XYChart.Data("Birds", 12));
+
+    barChart.getData().addAll(series1);
 
     //currently has hard coded long, lat, and zoom
     WebEngine engine = googleMaps.getEngine();
@@ -54,7 +75,8 @@ public class Controller {
       root = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));
     }
 
-    // Gets root from if statement scene width and height are both defined in main.
+    // Gets root from if statement.
+    // Scene width and height are both defined in main.
     Scene scene = new Scene(root, Main.SCENE_WIDTH, Main.SCENE_HEIGHT);
     stage.setScene(scene);
     scene.getStylesheets().add(Main.class.getResource("style.css").toExternalForm());
