@@ -35,15 +35,14 @@ public class Controller {
     xAxis.setLabel("Categories");
     yAxis.setLabel("Number of Events");
 
-    XYChart.Series series1 = new XYChart.Series();
-    series1.setName("2003");
-    series1.getData().add(new XYChart.Data("Cats", 100.34));
-    series1.getData().add(new XYChart.Data("Dogs", 50.82));
-    series1.getData().add(new XYChart.Data("Horses", 35));
-    series1.getData().add(new XYChart.Data("Cows", 66));
-    series1.getData().add(new XYChart.Data("Birds", 12));
+    XYChart.Series group1 = new XYChart.Series();
+    group1.getData().add(new XYChart.Data("Cats", 100.34));
+    group1.getData().add(new XYChart.Data("Dogs", 50.82));
+    group1.getData().add(new XYChart.Data("Horses", 35));
+    group1.getData().add(new XYChart.Data("Cows", 66));
+    group1.getData().add(new XYChart.Data("Birds", 12));
 
-    barChart.getData().addAll(series1);
+    barChart.getData().addAll(group1);
 
     //currently has hard coded long, lat, and zoom
     WebEngine engine = googleMaps.getEngine();
