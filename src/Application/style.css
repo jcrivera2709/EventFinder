@@ -7,38 +7,47 @@
 }
 
 #mapsButton {
-  -fx-text-fill: #178027;
+  -fx-text-fill: white;
   -fx-font-size: 15pt;
-  -fx-background-color: lightgreen;
+  -fx-background-color: linear-gradient(lightgreen, #178027);
   -fx-border-radius: 20;
   -fx-background-radius: 20;
   -fx-padding: 5;
 }
 
 #eventMenuButton {
-  -fx-text-fill: #178027;
+  -fx-text-fill: white;
   -fx-font-size: 15pt;
-  -fx-background-color: lightgreen;
+  -fx-background-color: linear-gradient(lightgreen, #178027);
   -fx-border-radius: 20;
   -fx-background-radius: 20;
   -fx-padding: 5;
 }
 
 #graphsButton {
-  -fx-text-fill: #178027;
+  -fx-text-fill: white;
   -fx-font-size: 15pt;
-  -fx-background-color: lightgreen;
+  -fx-background-color: linear-gradient(lightgreen, #178027);
   -fx-border-radius: 20;
   -fx-background-radius: 20;
   -fx-padding: 5;
 }
 
 #mainMenuButton {
-  -fx-text-fill: #178027;
+  -fx-text-fill: white;
   -fx-font-size: 15pt;
-  -fx-background-color: lightgreen;
+  -fx-background-color: linear-gradient(lightgreen, #178027);
   -fx-border-radius: 20;
   -fx-background-radius: 20;
   -fx-padding: 5;
 }
-
+#mainMenuText {
+  -fx-fill: white, silver;
+  -fx-font-weight: bold;
+  -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}
+#bulletinTxt {
+  -fx-fill: white, silver;
+  -fx-font-weight: bold;
+  -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}

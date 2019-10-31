@@ -11,8 +11,8 @@ public class Main extends Application {
 
   final static int LAST_ELEM = 250;
   private static StringBuilder sb = new StringBuilder();
-  static final int SCENE_WIDTH = 600;
-  static final int SCENE_HEIGHT = 600;
+  static final int SCENE_WIDTH = 652;
+  static final int SCENE_HEIGHT = 500;
 
   @Override
   public void start(Stage stage) throws Exception {
