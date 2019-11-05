@@ -19,7 +19,7 @@ public class Main extends Application {
 
     // Main menu scene using bulletin.fxml and style.css
     // Sets the first scene for the program the following scenes are found in the controller
-    Parent root = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));
+    Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
     Scene mainMenu = new Scene(root, SCENE_WIDTH, SCENE_HEIGHT);
     stage.setTitle("B U L L E T I N");
     stage.setScene(mainMenu);
