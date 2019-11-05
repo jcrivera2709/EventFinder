@@ -2,6 +2,7 @@ package Application;
 
 import java.awt.Desktop;
 import java.net.URI;
+import java.util.HashMap;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
@@ -13,25 +14,31 @@ public class Login {
   public TextField userField;
   public Button loginButton;
 
-  private boolean correctPw(String password) {
+  public void initialize() {
+  }
+
+  public void LogInButton(ActionEvent actionEvent) {
+
+    HashMap<String, String> username = new HashMap<>();
+
+    username.put("user", "1234");
+    username.put("admin", "password");
+
+    if (username.containsKey(userField.getText())) {
+
+    } else {
+
+    }
+  }
+
+  // checks if the inputed string is the correct password
+  private boolean correctPw(String pword) {
     boolean pw = false;
     String correct = "password";
-    if (password.equals(correct)) {
+    if (pword.equals(correct)) {
       pw = true;
     }
     return pw;
   }
 
-  public void LogInButton(ActionEvent actionEvent) {
-    if (correctPw(pwField.getText())) {
-      try {
-        Desktop desktop = java.awt.Desktop.getDesktop();
-        URI oURL = new URI("http://www.youtube.edu");
-        desktop.browse(oURL);
-      } catch (Exception ex) {
-        ex.printStackTrace();
-      }
-
-    }
-  }
 }
