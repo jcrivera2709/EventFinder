@@ -26,19 +26,6 @@ public class Login {
 
     if (username.containsKey(userField.getText())) {
 
-    } else {
-
     }
   }
-
-  // checks if the inputed string is the correct password
-  private boolean correctPw(String pword) {
-    boolean pw = false;
-    String correct = "password";
-    if (pword.equals(correct)) {
-      pw = true;
-    }
-    return pw;
-  }
-
 }
