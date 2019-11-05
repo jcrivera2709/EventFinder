@@ -5,16 +5,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.chart.BarChart;
-import javafx.scene.chart.CategoryAxis;
-import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
-public class Controller {
+public class Map {
 
   // All the different Buttons
   public Button mapsButton;
@@ -22,8 +18,18 @@ public class Controller {
   public Button eventMenuButton;
   public Button graphsButton;
 
+  @FXML
+  private WebView googleMaps = new WebView();
+
   public void initialize() {
 
+    //currently has hard coded long, lat, and zoom
+    WebEngine engine = googleMaps.getEngine();
+    double longitude = 26.4556419;
+    double latitude = -81.768879;
+    double zoom = 14;
+    String zoomString = zoom + "z";
+    engine.load("https://www.google.com/maps/@" + longitude + "," + latitude + "," + zoomString);
   }
 
   public void handleButtonAction(ActionEvent actionEvent) throws Exception {
@@ -54,4 +60,5 @@ public class Controller {
     scene.getStylesheets().add(Main.class.getResource("style.css").toExternalForm());
     stage.show();
   }
+
 }

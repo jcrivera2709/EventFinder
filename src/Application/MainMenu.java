@@ -1,30 +1,18 @@
 package Application;
 
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.chart.BarChart;
-import javafx.scene.chart.CategoryAxis;
-import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
-import javafx.scene.web.WebEngine;
-import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
-public class Controller {
-
+public class MainMenu {
   // All the different Buttons
   public Button mapsButton;
   public Button mainMenuButton;
   public Button eventMenuButton;
   public Button graphsButton;
-
-  public void initialize() {
-
-  }
 
   public void handleButtonAction(ActionEvent actionEvent) throws Exception {
 
@@ -54,4 +42,5 @@ public class Controller {
     scene.getStylesheets().add(Main.class.getResource("style.css").toExternalForm());
     stage.show();
   }
+
 }

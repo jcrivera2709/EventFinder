@@ -14,7 +14,7 @@ import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
-public class Controller {
+public class Graphs {
 
   // All the different Buttons
   public Button mapsButton;
@@ -22,8 +22,35 @@ public class Controller {
   public Button eventMenuButton;
   public Button graphsButton;
 
+  // Bar chart
+  public CategoryAxis xAxis = new CategoryAxis();
+  public NumberAxis yAxis = new NumberAxis();
+  public BarChart<String, Number> barChart = new BarChart<>(xAxis, yAxis);
+
+  @FXML
+  private WebView googleMaps = new WebView();
+
   public void initialize() {
 
+    xAxis.setLabel("Categories");
+    yAxis.setLabel("Number of Events");
+
+    XYChart.Series group1 = new XYChart.Series();
+    group1.getData().add(new XYChart.Data("Cats", 100.34));
+    group1.getData().add(new XYChart.Data("Dogs", 50.82));
+    group1.getData().add(new XYChart.Data("Horses", 35));
+    group1.getData().add(new XYChart.Data("Cows", 66));
+    group1.getData().add(new XYChart.Data("Birds", 12));
+
+    barChart.getData().addAll(group1);
+
+    //currently has hard coded long, lat, and zoom
+    WebEngine engine = googleMaps.getEngine();
+    double longitude = 26.4556419;
+    double latitude = -81.768879;
+    double zoom = 14;
+    String zoomString = zoom + "z";
+    engine.load("https://www.google.com/maps/@" + longitude + "," + latitude + "," + zoomString);
   }
 
   public void handleButtonAction(ActionEvent actionEvent) throws Exception {
