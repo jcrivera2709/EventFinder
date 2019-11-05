@@ -42,11 +42,34 @@
   -fx-padding: 5;
 }
 #mainMenuText {
-  -fx-fill: white, silver;
+  -fx-fill: linear-gradient(lightgreen, #178027, lightskyblue, #0c1b80);
   -fx-font-weight: bold;
   -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
 }
 #bulletinTxt {
+  -fx-fill: linear-gradient(lightgreen, #178027, lightskyblue, #0c1b80);
+  -fx-font-weight: bold;
+  -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}
+#loginButton {
+  -fx-text-fill: white;
+  -fx-font-size: 15pt;
+  -fx-background-color: linear-gradient(lightgreen, #178027);
+  -fx-border-radius: 20;
+  -fx-background-radius: 20;
+  -fx-padding: 5;
+}
+#loginTxt {
+  -fx-fill: linear-gradient(lightgreen, #178027, lightskyblue, #0c1b80);
+  -fx-font-weight: bold;
+  -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}
+#userTxt {
+  -fx-fill: white, silver;
+  -fx-font-weight: bold;
+  -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );
+}
+#passwordTxt{
   -fx-fill: white, silver;
   -fx-font-weight: bold;
   -fx-effect: dropshadow( gaussian , rgba(255,255,255,0.5) , 0,0,0,1 );

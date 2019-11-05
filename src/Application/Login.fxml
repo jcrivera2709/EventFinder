@@ -4,17 +4,25 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171"
-  xmlns:fx="http://javafx.com/fxml/1" fx:controller="Application.Login">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Application.Login">
   <children>
-    <PasswordField fx:id="pwField" layoutX="226.0" layoutY="236.0"/>
-    <TextField fx:id="userField" layoutX="226.0" layoutY="175.0"/>
-    <Text layoutX="160.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username:"/>
-    <Text layoutX="160.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:"/>
-    <Text layoutX="271.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login Page"/>
-    <Button fx:id="loginButton" layoutX="458.0" layoutY="236.0" mnemonicParsing="false"
-      onAction="#LogInButton" text="Log In"/>
+    <PasswordField fx:id="pwField" layoutX="226.0" layoutY="236.0" />
+    <TextField fx:id="userField" layoutX="226.0" layoutY="175.0" />
+    <Text fx:id="userTxt" fontSmoothingType="LCD" layoutX="101.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username:">
+         <font>
+            <Font name="SansSerif Italic" size="24.0" />
+         </font></Text>
+    <Text fx:id="passwordTxt" fontSmoothingType="LCD" layoutX="103.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:">
+         <font>
+            <Font name="SansSerif Italic" size="24.0" />
+         </font></Text>
+    <Text fx:id="loginTxt" fontSmoothingType="LCD" layoutX="174.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login Page">
+         <font>
+            <Font name="SansSerif Italic" size="56.0" />
+         </font></Text>
+    <Button fx:id="loginButton" layoutX="458.0" layoutY="236.0" mnemonicParsing="false" onAction="#LogInButton" text="Log In" />
   </children>
 </AnchorPane>
