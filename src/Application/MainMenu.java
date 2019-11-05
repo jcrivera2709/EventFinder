@@ -13,6 +13,7 @@ public class MainMenu {
   public Button mainMenuButton;
   public Button eventMenuButton;
   public Button graphsButton;
+  public Button loginMenuButton;
 
   public void handleButtonAction(ActionEvent actionEvent) throws Exception {
 
@@ -30,7 +31,11 @@ public class MainMenu {
     } else if (actionEvent.getSource() == eventMenuButton) {
       stage = (Stage) eventMenuButton.getScene().getWindow();
       root = FXMLLoader.load(getClass().getResource("bulletin.fxml"));
-    } else {
+    } else if (actionEvent.getSource() == loginMenuButton) {
+      stage = (Stage) eventMenuButton.getScene().getWindow();
+      root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+    }
+      else {
       stage = (Stage) mainMenuButton.getScene().getWindow();
       root = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));
     }
