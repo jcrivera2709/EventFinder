@@ -8,6 +8,7 @@ import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 public class MainMenu {
+
   // All the different Buttons
   public Button mapsButton;
   public Button mainMenuButton;
@@ -34,8 +35,7 @@ public class MainMenu {
     } else if (actionEvent.getSource() == loginMenuButton) {
       stage = (Stage) eventMenuButton.getScene().getWindow();
       root = FXMLLoader.load(getClass().getResource("Login.fxml"));
-    }
-      else {
+    } else {
       stage = (Stage) mainMenuButton.getScene().getWindow();
       root = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));
     }
@@ -44,7 +44,7 @@ public class MainMenu {
     // Scene width and height are both defined in main.
     Scene scene = new Scene(root, Main.SCENE_WIDTH, Main.SCENE_HEIGHT);
     stage.setScene(scene);
-    scene.getStylesheets().add(Main.class.getResource("style.css").toExternalForm());
+    scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
     stage.show();
   }
 
