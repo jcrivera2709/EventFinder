@@ -2,10 +2,11 @@ package Application;
 
 public enum Categories {
   Animal,
-  Religious,
-  Car,
+  Religion,
+  Cars,
   Sport,
   Fraternity,
   Sorority,
-  School
+  School,
+
 }
