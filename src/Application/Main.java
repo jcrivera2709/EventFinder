@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.lang.StringBuilder;
+import java.util.HashMap;
 
 public class Main extends Application {
 
@@ -29,7 +30,9 @@ public class Main extends Application {
 
   public static void main(String[] args) {
 
-    AdminMenu.setData();
+    HashMap<String,String> admins = CsvToData.setData(true);  // for admins
+    HashMap<String,String> users = CsvToData.setData(false); // for users
+
     launch(args);
 
   }
