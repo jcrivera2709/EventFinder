@@ -8,13 +8,21 @@ import javafx.stage.Stage;
 import java.lang.StringBuilder;
 import java.util.HashMap;
 
+/**
+ * @author Jose Rivera, Jose Ruiz-Ramon, Neel Patel, Carolina Bado-Cortez, Jaisson Lazo.
+ */
+
 public class Main extends Application {
 
   final static int LAST_ELEM = 250;
-  private static StringBuilder sb = new StringBuilder();
   public static final int SCENE_WIDTH = 652;
   public static final int SCENE_HEIGHT = 500;
 
+  /**
+   *
+   * @param stage
+   * @throws Exception the exception is attributed to the possibility of GUI failure.
+   */
   @Override
   public void start(Stage stage) throws Exception {
 
@@ -22,16 +30,19 @@ public class Main extends Application {
     // Sets the first scene for the program the following scenes are found in the controller
     Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
     Scene mainMenu = new Scene(root, SCENE_WIDTH, SCENE_HEIGHT);
-    stage.setTitle("B U L L E T I N");
+    stage.setTitle("BULLETINER");
     stage.setScene(mainMenu);
     mainMenu.getStylesheets().add(Main.class.getResource("style.css").toExternalForm());
     stage.show();
   }
 
+  /**
+   * Launches the csv database from class CsvToData.
+   * @param args
+   */
   public static void main(String[] args) {
 
-    HashMap<String,String> admins = CsvToData.setData(true);  // for admins
-    HashMap<String,String> users = CsvToData.setData(false); // for users
+
 
     launch(args);
 

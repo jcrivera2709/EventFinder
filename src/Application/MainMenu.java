@@ -7,6 +7,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
+/**
+ * This is the user's menu when he or she logs in from Main.java.
+ */
 public class MainMenu {
 
   // All the different Buttons
@@ -16,6 +19,11 @@ public class MainMenu {
   public Button graphsButton;
   public Button loginMenuButton;
 
+  /**
+   * This function handles the events inside this window.
+   * @param actionEvent
+   * @throws Exception
+   */
   public void handleButtonAction(ActionEvent actionEvent) throws Exception {
 
     Stage stage;
@@ -38,7 +46,7 @@ public class MainMenu {
     } else {
       stage = (Stage) mainMenuButton.getScene().getWindow();
       root = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));
-    }
+    } // last else
 
     // Gets root from if statement.
     // Scene width and height are both defined in main.
@@ -46,6 +54,6 @@ public class MainMenu {
     stage.setScene(scene);
     scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
     stage.show();
-  }
+  } // handleButtonAction()
 
-}
+} // class

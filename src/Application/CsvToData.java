@@ -5,8 +5,17 @@ import java.io.FileNotFoundException;
 import java.util.HashMap;
 import java.util.Scanner;
 
+/**
+ * @author Jose Ruiz-Ramon
+ * This class is the fake-database loader for both user and admin accounts.
+ */
 public class CsvToData {
 
+    /**
+     * This static function sets up the fake database as called from Main.main().
+     * @param isAdmin true for admin accounts, false for user accounts.
+     * @return
+     */
     public static HashMap<String,String> setData(boolean isAdmin)
     {
         HashMap<String,String> dataHashMap = new HashMap<>();
@@ -22,17 +31,18 @@ public class CsvToData {
 
             }
 
+            // this objects read the csvs line-by-line
             Scanner fileReader = new Scanner(data);
             int dataNo = 0;
 
             while(fileReader.hasNext())
             {
                 String line = fileReader.nextLine();
-                String[] dataLine = line.split(",");
+                String[] dataLine = line.split(","); // split strings to add as key, value into hashmap
 
-                dataHashMap.put(dataLine[0], dataLine[1]);
-                System.out.println(dataLine[0] + dataLine[1]);
-                dataLine = null;
+                dataHashMap.put(dataLine[0].trim(), dataLine[1].trim()); // append to hashmap
+                System.out.println(dataLine[0].trim() + dataLine[1].trim());
+                dataLine = null; // restart String splitter.
 
             }
 
@@ -47,8 +57,6 @@ public class CsvToData {
 
         return dataHashMap;
 
-    }
+    } // set data
 
-
-
-}
+} // class

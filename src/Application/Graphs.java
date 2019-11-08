@@ -14,6 +14,9 @@ import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
+/**
+ * This class will allow the user to see the frequencies and the types of events.
+ */
 public class Graphs {
 
   // All the different Buttons
@@ -30,19 +33,39 @@ public class Graphs {
   @FXML
   private WebView googleMaps = new WebView();
 
+  /**
+   * It initializes the behavior and data for the graphs.
+   */
   public void initialize() {
 
     xAxis.setLabel("Categories");
     yAxis.setLabel("Number of Events");
 
-    XYChart.Series group1 = new XYChart.Series();
-    group1.getData().add(new XYChart.Data("Cats", 100.34));
-    group1.getData().add(new XYChart.Data("Dogs", 50.82));
-    group1.getData().add(new XYChart.Data("Horses", 35));
-    group1.getData().add(new XYChart.Data("Cows", 66));
-    group1.getData().add(new XYChart.Data("Birds", 12));
+    XYChart.Series group = new XYChart.Series();
 
-    barChart.getData().addAll(group1);
+    group.getData().add(new XYChart.Data(Categories.Pets, 100.34));
+    group.getData().add(new XYChart.Data(Categories.Religion, 100.34));
+    group.getData().add(new XYChart.Data(Categories.Cars, 100.34));
+    group.getData().add(new XYChart.Data(Categories.Sport, 100.34));
+    group.getData().add(new XYChart.Data(Categories.Fraternity, 100.34));
+    group.getData().add(new XYChart.Data(Categories.Sorority, 100.34));
+    group.getData().add(new XYChart.Data(Categories.School, 100.34));
+    group.getData().add(new XYChart.Data(Categories.Adult, 100.34));
+    group.getData().add(new XYChart.Data(Categories.Kids, 100.34));
+    group.getData().add(new XYChart.Data(Categories.Kids, 100.34));
+    group.getData().add(new XYChart.Data(Categories.Party, 100.34));
+
+//            Pets,
+//            Religion,
+//            Cars,
+//            Sport,
+//            Fraternity,
+//            Sorority,
+//            School,
+//            Adult,
+//            Kids,
+//            Party
+    barChart.getData().addAll(group);
 
     //currently has hard coded long, lat, and zoom
     WebEngine engine = googleMaps.getEngine();
@@ -53,6 +76,11 @@ public class Graphs {
     engine.load("https://www.google.com/maps/@" + longitude + "," + latitude + "," + zoomString);
   }
 
+  /**
+   * This function handles every user event.
+   * @param actionEvent
+   * @throws Exception
+   */
   public void handleButtonAction(ActionEvent actionEvent) throws Exception {
 
     Stage stage;
