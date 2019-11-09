@@ -38,34 +38,36 @@ public class Graphs {
    */
   public void initialize() {
 
+
+
     xAxis.setLabel("Categories");
     yAxis.setLabel("Number of Events");
 
-    XYChart.Series group = new XYChart.Series();
+    XYChart.Series series1 = new XYChart.Series();
+    series1.setName("2003");
+    series1.getData().add(new XYChart.Data("Cats", 100.34));
+    series1.getData().add(new XYChart.Data("Dogs", 50.82));
+    series1.getData().add(new XYChart.Data("Horses", 35));
+    series1.getData().add(new XYChart.Data("Cows", 66));
+    series1.getData().add(new XYChart.Data("Birds", 12));
 
-    group.getData().add(new XYChart.Data(Categories.Pets, 100.34));
-    group.getData().add(new XYChart.Data(Categories.Religion, 100.34));
-    group.getData().add(new XYChart.Data(Categories.Cars, 100.34));
-    group.getData().add(new XYChart.Data(Categories.Sport, 100.34));
-    group.getData().add(new XYChart.Data(Categories.Fraternity, 100.34));
-    group.getData().add(new XYChart.Data(Categories.Sorority, 100.34));
-    group.getData().add(new XYChart.Data(Categories.School, 100.34));
-    group.getData().add(new XYChart.Data(Categories.Adult, 100.34));
-    group.getData().add(new XYChart.Data(Categories.Kids, 100.34));
-    group.getData().add(new XYChart.Data(Categories.Kids, 100.34));
-    group.getData().add(new XYChart.Data(Categories.Party, 100.34));
+    barChart.getData().addAll(series1);
 
-//            Pets,
-//            Religion,
-//            Cars,
-//            Sport,
-//            Fraternity,
-//            Sorority,
-//            School,
-//            Adult,
-//            Kids,
-//            Party
-    barChart.getData().addAll(group);
+
+//              Pets,
+//              Religion,
+//              Cars,
+//              Sport,
+//              Fraternity,
+//              Sorority,
+//              School,
+//              Adult,
+//              Kids,
+//              Party
+
+    barChart.getData().addAll(series1);
+
+
 
     //currently has hard coded long, lat, and zoom
     WebEngine engine = googleMaps.getEngine();

@@ -22,10 +22,12 @@ public class Login {
   public void initialize()
   {
 
-
-
   }
 
+  /**
+   * This function executes the login algo that will check the credentials, if false, nothing will happen.
+   * @throws IOException
+   */
   public void LogInButton() throws IOException {
 
     Stage stage = null;
@@ -33,23 +35,16 @@ public class Login {
 
 
       // depending on the the username and password it will send you the either main menu or admin screen
-      if (users.containsKey(userField.getText()) && users.get(userField.getText()).equals(users.get(userField.getText()))) {
-
+      if (users.containsKey(userField.getText()) && users.get(userField.getText()).equals(users.get(userField.getText())))
+      {
         stage = (Stage) loginButton.getScene().getWindow();
         root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
-
-      }
-
-      if (admins.containsKey(userField.getText()) && admins.get(userField.getText()).equals(admins.get(userField.getText()))) {
-
+      } // if
+      if (admins.containsKey(userField.getText()) && admins.get(userField.getText()).equals(admins.get(userField.getText())))
+      {
         stage = (Stage) loginButton.getScene().getWindow();
         root = FXMLLoader.load(getClass().getResource("AdminMenu.fxml"));
-
-      }
-
-      else{
-        System.err.println("USER OR PASS DOES NOT EXIST!");
-      }
+      } // if2
 
 
       // Gets root from if statement.

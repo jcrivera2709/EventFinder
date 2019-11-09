@@ -5,7 +5,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.lang.StringBuilder;
+import java.util.Scanner;
 
 public class Bulletin {
 
@@ -14,6 +20,31 @@ public class Bulletin {
   public Button mainMenuButton;
   public Button eventMenuButton;
   public Button graphsButton;
+  public TextArea dataArea;
+
+  public void initialize() throws FileNotFoundException {
+    try {
+
+      File data = new File("src\\Application\\events.csv");
+      StringBuilder sb = new StringBuilder();
+
+      // this objects read the csvs line-by-line
+      Scanner fileReader = new Scanner(data);
+
+      while (fileReader.hasNext()) {
+        String line = fileReader.nextLine();
+        sb.append(line + "\n");
+      }
+
+      String output = sb.toString();
+      dataArea.appendText(output);
+
+
+    } catch (FileNotFoundException e) {
+      e.printStackTrace();
+    }
+
+  }
 
   public void handleButtonAction(ActionEvent actionEvent) throws Exception {
 

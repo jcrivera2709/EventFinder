@@ -6,15 +6,20 @@ package Application;
  */
 public enum Categories {
 
-  Pets,
-  Religion,
-  Cars,
-  Sport,
-  Fraternity,
-  Sorority,
-  School,
-  Adult,
-  Kids,
-  Party
+  Pets("PETS"),
+  Religion("RELI"),
+  Cars("CARS"),
+  Sport("SPRT"),
+  Fraternity("BROS"),
+  Sorority("WHRS"),
+  School("SCHO"),
+  Adult("NSFW"),
+  Kids("KIDS"),
+  Party("PRTY");
 
+  private final String code;
+
+  Categories(String code) {
+    this.code = code;
+  }
 }

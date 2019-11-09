@@ -9,6 +9,8 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.io.*;
+
 
 public class AdminMenu {
 
@@ -26,14 +28,27 @@ public class AdminMenu {
       categoryBox.getItems().add(item);
     }
 
-
   }
 
+  public void addEvent() throws IOException {
 
-  public void addEvent()
-  {
     String eventDescriptionString = eventDescription.getText();
-    String eventNameFieldString = eventNameField.getText();
+    String eventNameString = eventNameField.getText();
+
+    String enumEvent = "EVENT"; // lol I need help to make the choiceBox pull the selected type from the enum lol
+
+    String appendData = null;
+
+    String fileUrl = "src/Application/events.csv";
+
+    BufferedWriter bw = new BufferedWriter(new FileWriter(fileUrl, true));
+
+    appendData = String.format("EVENT NAME: %s\nEVENT DESCRIPTION: %s\nEVENT TYPE: %s\n",
+            eventNameString, eventDescriptionString, enumEvent);
+
+    bw.write(appendData);
+    bw.close();
+
 
 
 
