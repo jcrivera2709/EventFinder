@@ -1,7 +1,6 @@
 package Application;
 
 import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -10,8 +9,6 @@ import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Button;
-import javafx.scene.web.WebEngine;
-import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 
 /**
@@ -29,12 +26,13 @@ public class Graphs {
   public CategoryAxis xAxis = new CategoryAxis();
   public NumberAxis yAxis = new NumberAxis();
   public BarChart<String, Number> barChart = new BarChart<>(xAxis, yAxis);
+  public AdminMenu unit =  new AdminMenu();
+
 
   /**
    * It initializes the behavior and data for the graphs.
    */
   public void initialize() {
-
 
     barChart.getData().clear();
 
@@ -42,16 +40,16 @@ public class Graphs {
     yAxis.setLabel("Number of Events");
 
     XYChart.Series series1 = new XYChart.Series();
-    series1.getData().add(new XYChart.Data("Pets", 100.34));
-    series1.getData().add(new XYChart.Data("Religion", 50.82));
-    series1.getData().add(new XYChart.Data("Cars", 35));
-    series1.getData().add(new XYChart.Data("Sport", 66));
-    series1.getData().add(new XYChart.Data("Fraternity", 12));
-    series1.getData().add(new XYChart.Data("Sorority", 12));
-    series1.getData().add(new XYChart.Data("School", 12));
-    series1.getData().add(new XYChart.Data("Adult", 12));
-    series1.getData().add(new XYChart.Data("Kids", 12));
-    series1.getData().add(new XYChart.Data("Party", 12));
+    series1.getData().add(new XYChart.Data("Pets", unit.getPetValue() ));
+    series1.getData().add(new XYChart.Data("Religion", unit.getRelValue()));
+    series1.getData().add(new XYChart.Data("Cars", unit.getCarValue()));
+    series1.getData().add(new XYChart.Data("Sport", unit.getSportValue()));
+    series1.getData().add(new XYChart.Data("Fraternity", unit.getFratValue()));
+    series1.getData().add(new XYChart.Data("Sorority", unit.getSorValue()));
+    series1.getData().add(new XYChart.Data("School", unit.getSchoolValue()));
+    series1.getData().add(new XYChart.Data("Adult", unit.getAdultValue()));
+    series1.getData().add(new XYChart.Data("Kids", unit.getKidValue()));
+    series1.getData().add(new XYChart.Data("Party", unit.getPartyValue()));
 
     barChart.getData().addAll(series1);
   }

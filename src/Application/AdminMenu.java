@@ -23,6 +23,96 @@ public class AdminMenu {
   public TextField eventNameField;
   public TextArea eventDescription;
   public Button eventsButton;
+  private int petValue;
+  private int partyValue;
+  private int sportValue;
+  private int relValue;
+  private int adultValue;
+  private int carValue;
+  private int fratValue;
+  private int sorValue;
+  private int kidValue;
+  private int schoolValue;
+
+  int getPetValue() {
+    return petValue;
+  }
+
+  private void setPetValue(int petValue) {
+    this.petValue = petValue;
+  }
+
+  int getPartyValue() {
+    return partyValue;
+  }
+
+  private void setPartyValue(int partyValue) {
+    this.partyValue = partyValue;
+  }
+
+  int getSportValue() {
+    return sportValue;
+  }
+
+  private void setSportValue(int sportValue) {
+    this.sportValue = sportValue;
+  }
+
+  int getRelValue() {
+    return relValue;
+  }
+
+  private void setRelValue(int relValue) {
+    this.relValue = relValue;
+  }
+
+  int getAdultValue() {
+    return adultValue;
+  }
+
+  private void setAdultValue(int adultValue) {
+    this.adultValue = adultValue;
+  }
+
+  int getCarValue() {
+    return carValue;
+  }
+
+  private void setCarValue(int carValue) {
+    this.carValue = carValue;
+  }
+
+  int getFratValue() {
+    return fratValue;
+  }
+
+  private void setFratValue(int fratValue) {
+    this.fratValue = fratValue;
+  }
+
+  int getSorValue() {
+    return sorValue;
+  }
+
+  private void setSorValue(int sorValue) {
+    this.sorValue = sorValue;
+  }
+
+  int getKidValue() {
+    return kidValue;
+  }
+
+  private void setKidValue(int kidValue) {
+    this.kidValue = kidValue;
+  }
+
+  int getSchoolValue() {
+    return schoolValue;
+  }
+
+  private void setSchoolValue(int schoolValue) {
+    this.schoolValue = schoolValue;
+  }
 
   /**
    * This function appends the Categories enums to the choiceBox.
@@ -48,8 +138,7 @@ public class AdminMenu {
     String eventNameString = eventNameField.getText();
     String eventType = categoryBox.getValue().toString();
 
-    String enumEvent = "EVENT"; // lol I need help to make the choiceBox pull the selected type from the enum lol
-    String appendData = null;
+    String appendData;
     String fileUrl = "src/Application/events.csv";
 
     BufferedWriter bw = new BufferedWriter(new FileWriter(fileUrl, true));
@@ -59,6 +148,28 @@ public class AdminMenu {
 
     bw.write(appendData);
     bw.close();
+
+    if (categoryBox.getValue().toString().equalsIgnoreCase("Pets")) {
+      setPetValue(petValue++);
+    } else if (categoryBox.getValue().toString().equalsIgnoreCase("Religion")) {
+      setRelValue(relValue++);
+    } else if (categoryBox.getValue().toString().equalsIgnoreCase("Cars")) {
+      setCarValue(carValue++);
+    } else if (categoryBox.getValue().toString().equalsIgnoreCase("Sport")) {
+      setSportValue(sportValue++);
+    } else if (categoryBox.getValue().toString().equalsIgnoreCase("Fraternity")) {
+      setFratValue(fratValue++);
+    } else if (categoryBox.getValue().toString().equalsIgnoreCase("Sorority")) {
+      setSorValue(sorValue++);
+    } else if (categoryBox.getValue().toString().equalsIgnoreCase("School")) {
+      setSchoolValue(schoolValue++);
+    } else if (categoryBox.getValue().toString().equalsIgnoreCase("Adult")) {
+      setAdultValue(adultValue++);
+    } else if (categoryBox.getValue().toString().equalsIgnoreCase("Kids")) {
+      setKidValue(kidValue++);
+    } else if (categoryBox.getValue().toString().equalsIgnoreCase("Party")) {
+      setPartyValue(partyValue++);
+    }
 
   } // addEvent()
 
@@ -84,3 +195,4 @@ public class AdminMenu {
     stage.show();
   } // handleButtonAction()
 } // class
+
