@@ -20,7 +20,11 @@
       onAction="#handleButtonAction" text="Go to WebPage"/>
     <Button fx:id="mainMenuButton" layoutX="51.0" layoutY="361.0" mnemonicParsing="false"
       onAction="#handleButtonAction" text="Go to Menu"/>
+
+
     <TextArea fx:id="dataArea" editable="false" layoutX="51.0" layoutY="72.0" prefHeight="272.0"
       prefWidth="474.0" wrapText="true"/>
+    <Button fx:id="graphsButton" layoutX="356.0" layoutY="361.0" mnemonicParsing="false"
+      text="Go to Graphs" onAction="#handleButtonAction"/>
   </AnchorPane>
 </VBox>

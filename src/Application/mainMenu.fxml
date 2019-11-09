@@ -12,6 +12,7 @@
         <Font name="SansSerif Italic" size="56.0" />
       </font>
     </Text>
+
     <Button fx:id="webButton" layoutX="265.0" layoutY="242.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Web Page" />
     <Button fx:id="eventMenuButton" layoutX="276.0" layoutY="285.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Events" />
     <Button fx:id="graphsButton" layoutX="276.0" layoutY="328.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Charts" />

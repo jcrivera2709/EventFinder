@@ -8,8 +8,14 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171"
   xmlns:fx="http://javafx.com/fxml/1" fx:controller="Application.Graphs">
+
   <Button fx:id="mainMenuButton" layoutX="382.0" layoutY="385.0" mnemonicParsing="false"
     onAction="#handleButtonAction" text="Back to menu"/>
+  <Button fx:id="eventMenuButton" layoutX="180.0" layoutY="385.0" mnemonicParsing="false"
+    onAction="#handleButtonAction" text="Events"/>
+  <Button fx:id="webButton" layoutX="265.0" layoutY="385.0" mnemonicParsing="false"
+    onAction="#handleButtonAction" text="Web Page"/>
+
   <BarChart fx:id="barChart" layoutX="14.0" layoutY="14.0" prefHeight="323.0" prefWidth="450.0">
     <xAxis>
       <CategoryAxis label="Categories" side="BOTTOM" fx:id="xAxis"/>
