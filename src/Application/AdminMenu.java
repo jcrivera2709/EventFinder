@@ -1,11 +1,16 @@
 package Application;
 
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 import java.io.*;
+import javafx.stage.Stage;
 
 /**
  * @author Jose Rivera, Jose Ruiz-Ramon
@@ -17,12 +22,12 @@ public class AdminMenu {
   public Button addEventButton;
   public TextField eventNameField;
   public TextArea eventDescription;
+  public Button eventsButton;
 
   /**
    * This function appends the Categories enums to the choiceBox.
    */
-  public void initialize()
-  {
+  public void initialize() {
     // clears items in choice box
     categoryBox.getItems().clear();
     // Goes through the enum named Categories and adds them to the combobox
@@ -34,12 +39,14 @@ public class AdminMenu {
 
   /**
    * This function adds the events when the Add Event button is clicked.
+   *
    * @throws IOException
    */
   public void addEvent() throws IOException {
 
     String eventDescriptionString = eventDescription.getText();
     String eventNameString = eventNameField.getText();
+    String eventType = categoryBox.getValue().toString();
 
     String enumEvent = "EVENT"; // lol I need help to make the choiceBox pull the selected type from the enum lol
     String appendData = null;
@@ -48,13 +55,32 @@ public class AdminMenu {
     BufferedWriter bw = new BufferedWriter(new FileWriter(fileUrl, true));
 
     appendData = String.format("EVENT NAME: %s\nEVENT DESCRIPTION: %s\nEVENT TYPE: %s\n\n",
-            eventNameString, eventDescriptionString, enumEvent);
+        eventNameString, eventDescriptionString, eventType);
 
     bw.write(appendData);
     bw.close();
 
-
   } // addEvent()
 
+  public void handleButtonAction(ActionEvent actionEvent) throws IOException {
 
+    Stage stage = null;
+    Parent root;
+
+    // Based on button pressed if statement will load the selected scene.
+    // if not scene is selected the default scene will be the main menu.
+    if (actionEvent.getSource() == eventsButton) {
+      stage = (Stage) eventsButton.getScene().getWindow();
+      root = FXMLLoader.load(getClass().getResource("bulletin.fxml"));
+    } else {
+      root = FXMLLoader.load(getClass().getResource("AdminMenu.fxml"));
+    }
+    // Gets root from if statement.
+    // Scene width and height are both defined in main.
+    Scene scene = new Scene(root, Main.SCENE_WIDTH, Main.SCENE_HEIGHT);
+    assert stage != null;
+    stage.setScene(scene);
+    scene.getStylesheets().add(getClass().getResource("style.css").toExternalForm());
+    stage.show();
+  } // handleButtonAction()
 } // class

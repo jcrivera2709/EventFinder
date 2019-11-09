@@ -6,7 +6,7 @@
   -fx-text-fill: #0c1b80;
 }
 
-#mapsButton {
+#webButton {
   -fx-text-fill: white;
   -fx-font-size: 15pt;
   -fx-background-color: linear-gradient(lightgreen, #178027);

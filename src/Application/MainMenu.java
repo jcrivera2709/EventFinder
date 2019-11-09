@@ -13,7 +13,7 @@ import javafx.stage.Stage;
 public class MainMenu {
 
   // All the different Buttons
-  public Button mapsButton;
+  public Button webButton;
   public Button mainMenuButton;
   public Button eventMenuButton;
   public Button graphsButton;
@@ -31,9 +31,9 @@ public class MainMenu {
 
     // Based on button pressed if statement will load the selected scene.
     // if not scene is selected the default scene will be the main menu.
-    if (actionEvent.getSource() == mapsButton) {
-      stage = (Stage) mapsButton.getScene().getWindow();
-      root = FXMLLoader.load(getClass().getResource("map.fxml"));
+    if (actionEvent.getSource() == webButton) {
+      stage = (Stage) webButton.getScene().getWindow();
+      root = FXMLLoader.load(getClass().getResource("WebEngine.fxml"));
     } else if (actionEvent.getSource() == graphsButton) {
       stage = (Stage) graphsButton.getScene().getWindow();
       root = FXMLLoader.load(getClass().getResource("Graphs.fxml"));

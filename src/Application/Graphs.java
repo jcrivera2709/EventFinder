@@ -30,52 +30,30 @@ public class Graphs {
   public NumberAxis yAxis = new NumberAxis();
   public BarChart<String, Number> barChart = new BarChart<>(xAxis, yAxis);
 
-  @FXML
-  private WebView googleMaps = new WebView();
-
   /**
    * It initializes the behavior and data for the graphs.
    */
   public void initialize() {
 
 
+    barChart.getData().clear();
 
     xAxis.setLabel("Categories");
     yAxis.setLabel("Number of Events");
 
     XYChart.Series series1 = new XYChart.Series();
-    series1.setName("2003");
-    series1.getData().add(new XYChart.Data("Cats", 100.34));
-    series1.getData().add(new XYChart.Data("Dogs", 50.82));
-    series1.getData().add(new XYChart.Data("Horses", 35));
-    series1.getData().add(new XYChart.Data("Cows", 66));
-    series1.getData().add(new XYChart.Data("Birds", 12));
+    series1.getData().add(new XYChart.Data("Pets", 100.34));
+    series1.getData().add(new XYChart.Data("Religion", 50.82));
+    series1.getData().add(new XYChart.Data("Cars", 35));
+    series1.getData().add(new XYChart.Data("Sport", 66));
+    series1.getData().add(new XYChart.Data("Fraternity", 12));
+    series1.getData().add(new XYChart.Data("Sorority", 12));
+    series1.getData().add(new XYChart.Data("School", 12));
+    series1.getData().add(new XYChart.Data("Adult", 12));
+    series1.getData().add(new XYChart.Data("Kids", 12));
+    series1.getData().add(new XYChart.Data("Party", 12));
 
     barChart.getData().addAll(series1);
-
-
-//              Pets,
-//              Religion,
-//              Cars,
-//              Sport,
-//              Fraternity,
-//              Sorority,
-//              School,
-//              Adult,
-//              Kids,
-//              Party
-
-    barChart.getData().addAll(series1);
-
-
-
-    //currently has hard coded long, lat, and zoom
-    WebEngine engine = googleMaps.getEngine();
-    double longitude = 26.4556419;
-    double latitude = -81.768879;
-    double zoom = 14;
-    String zoomString = zoom + "z";
-    engine.load("https://www.google.com/maps/@" + longitude + "," + latitude + "," + zoomString);
   }
 
   /**
@@ -92,7 +70,7 @@ public class Graphs {
     // if not scene is selected the default scene will be the main menu.
     if (actionEvent.getSource() == mapsButton) {
       stage = (Stage) mapsButton.getScene().getWindow();
-      root = FXMLLoader.load(getClass().getResource("map.fxml"));
+      root = FXMLLoader.load(getClass().getResource("WebEngine.fxml"));
     } else if (actionEvent.getSource() == graphsButton) {
       stage = (Stage) graphsButton.getScene().getWindow();
       root = FXMLLoader.load(getClass().getResource("Graphs.fxml"));

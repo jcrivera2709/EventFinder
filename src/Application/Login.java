@@ -56,7 +56,6 @@ public class Login {
     scene.getStylesheets().add(Main.class.getResource("style.css").toExternalForm());
     stage.show();
 
-
   }
 
 }
