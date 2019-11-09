@@ -1,0 +1,9 @@
+<changelist name="Uncommitted_changes_before_Update_at_11_9_2019_12_14_PM_[Default]" date="1573319685110" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_9_2019_12_14_PM_[Default]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 11/9/2019 12:14 PM [Default]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/EventFinder/Application/AdminMenu.class" />
+    <option name="AFTER_PATH" value="out/production/EventFinder/Application/AdminMenu.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_11_9_2019_12_14_PM_[Default]/AdminMenu.class" />
+  </binary>
+</changelist>

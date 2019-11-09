@@ -1,0 +1,29 @@
+Index: src/Application/AdminMenu.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/Application/AdminMenu.java	(revision a7615606e588959975fa4be9776e737ef50a4902)
++++ src/Application/AdminMenu.java	(date 1573319420534)
+@@ -17,7 +17,7 @@
+   public TextField eventNameField;
+   public TextArea eventDescription;
+ 
+-  public void initialize(){
++  public void initialize() {
+     // clears items in choice box
+     categoryBox.getItems().clear();
+     // Goes through the enum named Categories and adds them to the combobox
+@@ -26,11 +26,10 @@
+     }
+   }
+ 
+-  public void addEvent(){
++  public void addEvent() {
+ 
+   }
+ 
+-
+   public static void setData() {
+ 
+     try {

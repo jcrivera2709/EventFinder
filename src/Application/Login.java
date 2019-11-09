@@ -39,12 +39,15 @@ public class Login {
       {
         stage = (Stage) loginButton.getScene().getWindow();
         root = FXMLLoader.load(getClass().getResource("MainMenu.fxml"));
-      } // if
-      if (admins.containsKey(userField.getText()) && admins.get(userField.getText()).equals(admins.get(userField.getText())))
+      }
+      else if (admins.containsKey(userField.getText()) && admins.get(userField.getText()).equals(admins.get(userField.getText())))
       {
         stage = (Stage) loginButton.getScene().getWindow();
         root = FXMLLoader.load(getClass().getResource("AdminMenu.fxml"));
-      } // if2
+      } else{
+        stage = (Stage) loginButton.getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+      }
 
 
       // Gets root from if statement.

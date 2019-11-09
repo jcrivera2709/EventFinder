@@ -1,0 +1,30 @@
+Index: .idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/.gitignore	(revision a7615606e588959975fa4be9776e737ef50a4902)
++++ .idea/.gitignore	(date 1573319509756)
+@@ -1,2 +1,3 @@
+ # Default ignored files
+-/workspace.xml
+\ No newline at end of file
++/workspace.xml
++/shelf/
+\ No newline at end of file
+Index: out/production/EventFinder/Application/AdminMenu.fxml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- out/production/EventFinder/Application/AdminMenu.fxml	(revision a7615606e588959975fa4be9776e737ef50a4902)
++++ out/production/EventFinder/Application/AdminMenu.fxml	(date 1573163360323)
+@@ -14,7 +14,7 @@
+     <ComboBox fx:id="categoryBox" layoutX="371.0" layoutY="103.0" prefWidth="150.0"
+       promptText="Choose Category"/>
+     <Button fx:id="addEventButton" layoutX="450.0" layoutY="297.0" mnemonicParsing="false"
+-      text="Add Event"/>
++      text="Add Event" onAction="#addEvent"/>
+     <TextField fx:id="eventNameField" layoutX="134.0" layoutY="103.0" prefHeight="25.0"
+       prefWidth="200.0"/>
+     <TextArea fx:id="eventDescription" layoutX="134.0" layoutY="148.0" prefHeight="200.0"
