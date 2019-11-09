@@ -19,17 +19,17 @@ public class Map {
   public Button graphsButton;
 
   @FXML
-  private WebView googleMaps = new WebView();
+  private WebView webPage = new WebView();
 
   public void initialize() {
 
     //currently has hard coded long, lat, and zoom
-    WebEngine engine = googleMaps.getEngine();
+    WebEngine engine = webPage.getEngine();
     double longitude = 26.4556419;
     double latitude = -81.768879;
     double zoom = 14;
     String zoomString = zoom + "z";
-    engine.load("https://www.google.com/maps/@" + longitude + "," + latitude + "," + zoomString);
+    engine.load("hhttps://fgcu.campuslabs.com/engage/organizations");
   }
 
   public void handleButtonAction(ActionEvent actionEvent) throws Exception {
