@@ -5,8 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import java.lang.StringBuilder;
-import java.util.HashMap;
 
 /**
  * @author Jose Rivera, Jose Ruiz-Ramon, Neel Patel, Carolina Bado-Cortez, Jaisson Lazo.

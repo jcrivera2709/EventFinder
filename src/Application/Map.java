@@ -23,13 +23,9 @@ public class Map {
 
   public void initialize() {
 
-    //currently has hard coded long, lat, and zoom
+    //currently sends you to the fgcu organizations website
     WebEngine engine = webPage.getEngine();
-    double longitude = 26.4556419;
-    double latitude = -81.768879;
-    double zoom = 14;
-    String zoomString = zoom + "z";
-    engine.load("hhttps://fgcu.campuslabs.com/engage/organizations");
+    engine.load("https://fgcu.campuslabs.com/engage/organizations");
   }
 
   public void handleButtonAction(ActionEvent actionEvent) throws Exception {
