@@ -23,6 +23,9 @@
          <font>
             <Font name="SansSerif Italic" size="56.0" />
          </font></Text>
-    <Button fx:id="loginButton" layoutX="458.0" layoutY="236.0" mnemonicParsing="false" onAction="#LogInButton" text="Log In" />
+    <Button fx:id="loginButton" layoutX="458.0" layoutY="236.0" mnemonicParsing="false" onAction="#LogInButton" text="Log In">
+         <font>
+            <Font name="SansSerif Italic" size="13.0" />
+         </font></Button>
   </children>
 </AnchorPane>

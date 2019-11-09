@@ -5,22 +5,27 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171"
-  xmlns:fx="http://javafx.com/fxml/1" fx:controller="Application.AdminMenu">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Application.AdminMenu">
   <children>
-    <ComboBox fx:id="categoryBox" layoutX="371.0" layoutY="103.0" prefWidth="150.0"
-      promptText="Choose Category"/>
-    <Button fx:id="addEventButton" layoutX="450.0" layoutY="297.0" mnemonicParsing="false"
-      text="Add Event" onAction="#addEvent"/>
-    <TextField fx:id="eventNameField" layoutX="134.0" layoutY="103.0" prefHeight="25.0"
-      prefWidth="200.0"/>
-    <TextArea fx:id="eventDescription" layoutX="134.0" layoutY="148.0" prefHeight="200.0"
-      prefWidth="200.0"/>
-    <Text layoutX="62.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Event Name:"/>
-    <Text layoutX="33.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0"
-      text="Event Description:"/>
+    <ComboBox fx:id="categoryBox" layoutX="390.0" layoutY="102.0" prefWidth="150.0" promptText="Choose Category" />
+    <Button fx:id="addEventButton" layoutX="406.0" layoutY="215.0" mnemonicParsing="false" onAction="#addEvent" text="Add Event" />
+    <TextField fx:id="eventNameField" layoutX="163.0" layoutY="102.0" prefHeight="25.0" prefWidth="200.0" />
+    <TextArea fx:id="eventDescription" layoutX="163.0" layoutY="176.0" prefHeight="200.0" prefWidth="200.0" />
+    <Text fx:id="eventNameTxt" fontSmoothingType="LCD" layoutX="14.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Event Name:">
+         <font>
+            <Font name="SansSerif Italic" size="24.0" />
+         </font></Text>
+    <Text fx:id="addEventTxt" fontSmoothingType="LCD" layoutX="163.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Event ">
+         <font>
+            <Font name="SansSerif Italic" size="56.0" />
+         </font></Text>
+      <Text fx:id="eventDescTxt" fontSmoothingType="LCD" layoutX="14.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Event Description:">
+         <font>
+            <Font name="SansSerif Italic" size="24.0" />
+         </font>
+      </Text>
   </children>
 </AnchorPane>
