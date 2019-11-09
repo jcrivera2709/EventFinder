@@ -17,7 +17,6 @@ public class Main extends Application {
   public static final int SCENE_HEIGHT = 500;
 
   /**
-   *
    * @param stage
    * @throws Exception the exception is attributed to the possibility of GUI failure.
    */
@@ -36,11 +35,10 @@ public class Main extends Application {
 
   /**
    * Launches the csv database from class CsvToData.
+   *
    * @param args
    */
   public static void main(String[] args) {
-
-
 
     launch(args);
 

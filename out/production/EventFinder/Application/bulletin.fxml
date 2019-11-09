@@ -7,18 +7,24 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Application.Bulletin">
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.171"
+  xmlns:fx="http://javafx.com/fxml/1" fx:controller="Application.Bulletin">
   <AnchorPane prefHeight="438.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
-    <Text fx:id="bulletinTxt" fill="#1bd14a" fontSmoothingType="LCD" layoutX="271.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BULLETIN">
+    <Text fx:id="bulletinTxt" fill="#1bd14a" fontSmoothingType="LCD" layoutX="271.0" layoutY="44.0"
+      strokeType="OUTSIDE" strokeWidth="0.0" text="BULLETIN">
       <font>
-        <Font name="Impact" size="31.0" />
+        <Font name="Impact" size="31.0"/>
       </font>
     </Text>
-    <Button fx:id="webButton" layoutX="188.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Go to WebPage" />
-    <Button fx:id="mainMenuButton" layoutX="51.0" layoutY="361.0" mnemonicParsing="false" onAction="#handleButtonAction" text="Go to Menu" />
+    <Button fx:id="webButton" layoutX="188.0" layoutY="361.0" mnemonicParsing="false"
+      onAction="#handleButtonAction" text="Go to WebPage"/>
+    <Button fx:id="mainMenuButton" layoutX="51.0" layoutY="361.0" mnemonicParsing="false"
+      onAction="#handleButtonAction" text="Go to Menu"/>
 
 
-    <TextArea fx:id="dataArea" editable="false" layoutX="51.0" layoutY="72.0" prefHeight="272.0" prefWidth="474.0" wrapText="true" />
-      <Button fx:id="graphsButton" layoutX="356.0" layoutY="361.0" mnemonicParsing="false" text="Go to Graphs" onAction="#handleButtonAction"/>
+    <TextArea fx:id="dataArea" editable="false" layoutX="51.0" layoutY="72.0" prefHeight="272.0"
+      prefWidth="474.0" wrapText="true"/>
+    <Button fx:id="graphsButton" layoutX="356.0" layoutY="361.0" mnemonicParsing="false"
+      text="Go to Graphs" onAction="#handleButtonAction"/>
   </AnchorPane>
 </VBox>
