@@ -11,7 +11,7 @@ public enum Categories {
   Cars("CARS"),
   Sport("SPRT"),
   Fraternity("BROS"),
-  Sorority("WHRS"),
+  Sorority("SNBS"),
   School("SCHO"),
   Adult("NSFW"),
   Kids("KIDS"),

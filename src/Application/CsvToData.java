@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class CsvToData {
 
     /**
-     * This static function sets up the fake database as called from Main.main().
+     * This static function sets up the fake database as called from Login class.
      * @param isAdmin true for admin accounts, false for user accounts.
      * @return
      */
