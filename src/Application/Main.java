@@ -7,17 +7,16 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- * @author Jose Rivera, Jose Ruiz-Ramon, Neel Patel, Carolina Bado-Cortez, Jaisson Lazo.
+ * @author José Rivera, Jose Ruiz-Ramon, Neel Patel, Carolina Bado-Cortez, Jaisson Lazo.
  */
 
 public class Main extends Application {
 
-  final static int LAST_ELEM = 250;
-  public static final int SCENE_WIDTH = 652;
-  public static final int SCENE_HEIGHT = 500;
+  static final int SCENE_WIDTH = 652;
+  static final int SCENE_HEIGHT = 500;
 
   /**
-   * @param stage
+   * @param stage is the scene that the will load when the program runs.
    * @throws Exception the exception is attributed to the possibility of GUI failure.
    */
   @Override
@@ -36,7 +35,7 @@ public class Main extends Application {
   /**
    * Launches the csv database from class CsvToData.
    *
-   * @param args
+   * @param args are arguments that are in a string array.
    */
   public static void main(String[] args) {
 
