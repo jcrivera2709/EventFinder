@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
@@ -27,6 +28,16 @@ public class AdminMenu {
   public TextField eventNameField;
   public TextArea eventDescription;
   public Button eventsButton;
+  public TextField eventLocationField;
+  public Text eventLocationTxt;
+  public TextField eventDateField;
+  public Text eventNameTxt;
+  public Text addEventTxt;
+  public Text eventDescTxt;
+  public Text eventDateText;
+  public Button removeEventButton;
+  public Button editEventButton;
+
   private int petValue;
   private int partyValue;
   private int sportValue;
@@ -137,7 +148,6 @@ public class AdminMenu {
    * @throws IOException
    */
   public void addEvent() throws IOException {
-
 
     //  String id = eventId.getText();
 
