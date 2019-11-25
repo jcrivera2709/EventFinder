@@ -10,10 +10,14 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 import javafx.stage.Stage;
 
 /**
- * @author Jose Rivera, Jose Ruiz-Ramon
+ * @author Jose Rivera, Jose Ruiz-Ramon ,,
  */
 
 public class AdminMenu {
@@ -134,8 +138,16 @@ public class AdminMenu {
    */
   public void addEvent() throws IOException {
 
+
+    //  String id = eventId.getText();
+
+    String id = "2"; // add textbox for id
     String eventDescriptionString = eventDescription.getText();
     String eventNameString = eventNameField.getText();
+
+    //String eventDateString = eventDateField.getText(); // add textbox for eventdate
+    String eventDateString = "March 5, 2020";
+
     String eventType = categoryBox.getValue().toString();
 
     String appendData;
@@ -143,8 +155,8 @@ public class AdminMenu {
 
     BufferedWriter bw = new BufferedWriter(new FileWriter(fileUrl, true));
 
-    appendData = String.format("EVENT NAME: %s\nEVENT DESCRIPTION: %s\nEVENT TYPE: %s\n\n",
-        eventNameString, eventDescriptionString, eventType);
+    appendData = String.format("ID:%s\nEVENT NAME: %s\nEVENT DATE: %s\nEVENT DESCRIPTION: %s\nEVENT TYPE: %s\n",
+            id, eventNameString, eventDateString, eventDescriptionString, eventType);
 
     bw.write(appendData);
     bw.close();
@@ -172,6 +184,146 @@ public class AdminMenu {
     }
 
   } // addEvent()
+
+  /**
+   * This function removes the events when the Remove Event button is clicked. ()
+   *
+   * @throws IOException
+   */
+  public void removeEvent() throws IOException
+  {
+    /*
+        WE NEED THE REMOVE BTN
+     */
+
+    String id = "2"; // we need a field for id
+    String fileUrl = "src/Application/events.csv";
+    List<String> linebyline = new ArrayList<String>();
+    BufferedReader reader = new BufferedReader(new FileReader(fileUrl));
+
+    File data = new File(fileUrl);
+
+
+    // this objects read the csvs line-by-line
+    Scanner fileReader = new Scanner(data);
+
+    while (fileReader.hasNext()) {
+      String line = fileReader.nextLine();
+      linebyline.add(line);
+    }
+
+    fileReader.close();
+    reader.close();
+
+    for (int i = 0; i < linebyline.size(); i = i + 5){
+      if (linebyline.get(i).equals("ID:"+id)){
+
+        System.out.println(linebyline.get(i));
+        System.out.println(linebyline.get(i+1));
+        System.out.println(linebyline.get(i+2));
+        System.out.println(linebyline.get(i+3));
+        System.out.println(linebyline.get(i+4));
+
+        linebyline.remove(i);   // id line
+        linebyline.remove(i);   // event name line
+        linebyline.remove(i);   // date line
+        linebyline.remove(i);   // event desc line
+        linebyline.remove(i);   // event type line
+        break;
+      }
+    }
+
+    StringBuilder finalSb = new StringBuilder("");
+    for(String s: linebyline)
+    {
+      if(!s.equals("")){
+        finalSb.append(s +"\n");
+      }
+    }
+    String finalString = finalSb.toString();
+
+//    System.out.println(finalString);
+
+    BufferedWriter writer = new BufferedWriter(new FileWriter(fileUrl));
+
+    writer.write(finalString);
+    writer.close();
+
+  } // removeEvent()
+
+  /**
+   * This function updates/edits the selected event by ID from textBox.
+   * @throws IOException
+   */
+  public void updateEvent() throws IOException
+  {
+    /*
+          WE NEED THE UPDATE BTN
+     */
+
+    String id = "we need a field for id";
+
+    String fileUrl = "src/Application/events.csv";
+    List<String> linebyline = new ArrayList<String>();
+    BufferedReader reader = new BufferedReader(new FileReader(fileUrl));
+
+    File data = new File(fileUrl);
+
+
+    // this objects read the csvs line-by-line
+    Scanner fileReader = new Scanner(data);
+
+    while (fileReader.hasNext()) {
+      String line = fileReader.nextLine();
+      linebyline.add(line);
+    }
+
+    fileReader.close();
+    reader.close();
+
+    for (int i = 0; i < linebyline.size(); i = i + 5){
+      if (linebyline.get(i).equals("ID:"+id)){
+
+        System.out.println(linebyline.get(i));
+        System.out.println(linebyline.get(i+1));
+        System.out.println(linebyline.get(i+2));
+        System.out.println(linebyline.get(i+3));
+        System.out.println(linebyline.get(i+4));
+
+        linebyline.remove(i);   // id line
+        linebyline.remove(i);   // event name line
+        linebyline.remove(i);   // date line
+        linebyline.remove(i);   // event desc line
+        linebyline.remove(i);   // event type line
+
+        linebyline.add("ID:"+ id);
+        linebyline.add("EVENT NAME: " + eventNameField.getText());
+        linebyline.add("EVENT DATE: " + "eventDate"); // we need a date TextBox
+        linebyline.add("EVENT DESCRIPTION: " + eventDescription.getText());
+        linebyline.add("EVENT TYPE: " + categoryBox.getValue().toString());
+
+        break;
+      }
+    }
+
+    StringBuilder finalSb = new StringBuilder("");
+    for(String s: linebyline)
+    {
+      if(!s.equals("")){
+        finalSb.append(s +"\n");
+      }
+    }
+    String finalString = finalSb.toString();
+
+//    System.out.println(finalString);
+
+    BufferedWriter writer = new BufferedWriter(new FileWriter(fileUrl));
+
+    writer.write(finalString);
+    writer.close();
+
+
+  } // removeEvent()
 
   public void handleButtonAction(ActionEvent actionEvent) throws IOException {
 
