@@ -24,19 +24,27 @@ import javafx.stage.Stage;
 public class AdminMenu {
 
   public ComboBox categoryBox;
+
+  // Buttons for the events
   public Button addEventButton;
-  public TextField eventNameField;
-  public TextArea eventDescription;
   public Button eventsButton;
-  public TextField eventLocationField;
+  public Button removeEventButton;
+  public Button editEventButton;
+
+  // Text for the events
   public Text eventLocationTxt;
-  public TextField eventDateField;
+  public Text eventIDText;
   public Text eventNameTxt;
   public Text addEventTxt;
   public Text eventDescTxt;
   public Text eventDateText;
-  public Button removeEventButton;
-  public Button editEventButton;
+
+  // Text fields and areas.
+  public TextField eventIDField;
+  public TextField eventNameField;
+  public TextField eventLocationField;
+  public TextField eventDateField;
+  public TextArea eventDescription;
 
   private int petValue;
   private int partyValue;
@@ -165,7 +173,8 @@ public class AdminMenu {
 
     BufferedWriter bw = new BufferedWriter(new FileWriter(fileUrl, true));
 
-    appendData = String.format("ID:%s\nEVENT NAME: %s\nEVENT DATE: %s\nEVENT DESCRIPTION: %s\nEVENT TYPE: %s\n",
+    appendData = String
+        .format("ID:%s\nEVENT NAME: %s\nEVENT DATE: %s\nEVENT DESCRIPTION: %s\nEVENT TYPE: %s\n",
             id, eventNameString, eventDateString, eventDescriptionString, eventType);
 
     bw.write(appendData);
@@ -200,8 +209,7 @@ public class AdminMenu {
    *
    * @throws IOException
    */
-  public void removeEvent() throws IOException
-  {
+  public void removeEvent() throws IOException {
     /*
         WE NEED THE REMOVE BTN
      */
@@ -212,7 +220,6 @@ public class AdminMenu {
     BufferedReader reader = new BufferedReader(new FileReader(fileUrl));
 
     File data = new File(fileUrl);
-
 
     // this objects read the csvs line-by-line
     Scanner fileReader = new Scanner(data);
@@ -225,14 +232,14 @@ public class AdminMenu {
     fileReader.close();
     reader.close();
 
-    for (int i = 0; i < linebyline.size(); i = i + 5){
-      if (linebyline.get(i).equals("ID:"+id)){
+    for (int i = 0; i < linebyline.size(); i = i + 5) {
+      if (linebyline.get(i).equals("ID:" + id)) {
 
         System.out.println(linebyline.get(i));
-        System.out.println(linebyline.get(i+1));
-        System.out.println(linebyline.get(i+2));
-        System.out.println(linebyline.get(i+3));
-        System.out.println(linebyline.get(i+4));
+        System.out.println(linebyline.get(i + 1));
+        System.out.println(linebyline.get(i + 2));
+        System.out.println(linebyline.get(i + 3));
+        System.out.println(linebyline.get(i + 4));
 
         linebyline.remove(i);   // id line
         linebyline.remove(i);   // event name line
@@ -244,10 +251,9 @@ public class AdminMenu {
     }
 
     StringBuilder finalSb = new StringBuilder("");
-    for(String s: linebyline)
-    {
-      if(!s.equals("")){
-        finalSb.append(s +"\n");
+    for (String s : linebyline) {
+      if (!s.equals("")) {
+        finalSb.append(s + "\n");
       }
     }
     String finalString = finalSb.toString();
@@ -263,10 +269,10 @@ public class AdminMenu {
 
   /**
    * This function updates/edits the selected event by ID from textBox.
+   *
    * @throws IOException
    */
-  public void updateEvent() throws IOException
-  {
+  public void updateEvent() throws IOException {
     /*
           WE NEED THE UPDATE BTN
      */
@@ -279,7 +285,6 @@ public class AdminMenu {
 
     File data = new File(fileUrl);
 
-
     // this objects read the csvs line-by-line
     Scanner fileReader = new Scanner(data);
 
@@ -291,14 +296,14 @@ public class AdminMenu {
     fileReader.close();
     reader.close();
 
-    for (int i = 0; i < linebyline.size(); i = i + 5){
-      if (linebyline.get(i).equals("ID:"+id)){
+    for (int i = 0; i < linebyline.size(); i = i + 5) {
+      if (linebyline.get(i).equals("ID:" + id)) {
 
         System.out.println(linebyline.get(i));
-        System.out.println(linebyline.get(i+1));
-        System.out.println(linebyline.get(i+2));
-        System.out.println(linebyline.get(i+3));
-        System.out.println(linebyline.get(i+4));
+        System.out.println(linebyline.get(i + 1));
+        System.out.println(linebyline.get(i + 2));
+        System.out.println(linebyline.get(i + 3));
+        System.out.println(linebyline.get(i + 4));
 
         linebyline.remove(i);   // id line
         linebyline.remove(i);   // event name line
@@ -306,7 +311,7 @@ public class AdminMenu {
         linebyline.remove(i);   // event desc line
         linebyline.remove(i);   // event type line
 
-        linebyline.add("ID:"+ id);
+        linebyline.add("ID:" + id);
         linebyline.add("EVENT NAME: " + eventNameField.getText());
         linebyline.add("EVENT DATE: " + "eventDate"); // we need a date TextBox
         linebyline.add("EVENT DESCRIPTION: " + eventDescription.getText());
@@ -317,10 +322,9 @@ public class AdminMenu {
     }
 
     StringBuilder finalSb = new StringBuilder("");
-    for(String s: linebyline)
-    {
-      if(!s.equals("")){
-        finalSb.append(s +"\n");
+    for (String s : linebyline) {
+      if (!s.equals("")) {
+        finalSb.append(s + "\n");
       }
     }
     String finalString = finalSb.toString();
