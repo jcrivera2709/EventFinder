@@ -2,7 +2,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
-<DialogPane fx:controller="sample.ContactController" xmlns:fx="http://javafx.com/fxml">
+<DialogPane fx:controller="Application.ContactController" xmlns:fx="http://javafx.com/fxml">
     <headerText>
         Fill in the information for the new Contact
     </headerText>
