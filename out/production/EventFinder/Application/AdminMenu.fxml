@@ -14,11 +14,11 @@
     promptText="Choose Category"/>
   <Button fx:id="addEventButton" layoutX="307.0" layoutY="253.0" mnemonicParsing="false"
     onAction="#addEvent" prefHeight="25.0" prefWidth="83.0" text="Add Event"/>
-  <TextField fx:id="eventNameField" layoutX="225.0" layoutY="103.0" prefHeight="25.0"
+  <TextField fx:id="eventNameField" layoutX="225.0" layoutY="115.0" prefHeight="25.0"
     prefWidth="165.0"/>
   <TextArea fx:id="eventDescription" layoutX="14.0" layoutY="295.0" prefHeight="123.0"
     prefWidth="261.0"/>
-  <Text fx:id="eventNameTxt" fontSmoothingType="LCD" layoutX="14.0" layoutY="124.0"
+  <Text fx:id="eventNameTxt" fontSmoothingType="LCD" layoutX="14.0" layoutY="136.0"
     strokeType="OUTSIDE" strokeWidth="0.0" text="Event Name:">
     <font>
       <Font name="SansSerif Italic" size="24.0"/>
@@ -30,7 +30,7 @@
       <Font name="SansSerif Italic" size="56.0"/>
     </font>
   </Text>
-  <Text fx:id="eventDescTxt" fontSmoothingType="LCD" layoutX="14.0" layoutY="237.0"
+  <Text fx:id="eventDescTxt" fontSmoothingType="LCD" layoutX="14.0" layoutY="273.0"
     strokeType="OUTSIDE" strokeWidth="0.0" text="Event Description:" wrappingWidth="206.75390625">
     <font>
       <Font name="SansSerif Italic" size="24.0"/>
@@ -44,18 +44,26 @@
       <Font name="SansSerif Italic" size="24.0"/>
     </font>
   </Text>
-  <TextField fx:id="eventLocationField" layoutX="225.0" layoutY="139.0" prefHeight="25.0"
+  <TextField fx:id="eventLocationField" layoutX="225.0" layoutY="141.0" prefHeight="25.0"
     prefWidth="165.0"/>
-  <Text fx:id="eventDateText" fontSmoothingType="LCD" layoutX="14.0" layoutY="201.0"
+  <Text fx:id="eventDateText" fontSmoothingType="LCD" layoutX="14.0" layoutY="190.0"
     strokeType="OUTSIDE" strokeWidth="0.0" text="Event Date:" wrappingWidth="138.72655928134918">
     <font>
       <Font name="SansSerif Italic" size="24.0"/>
     </font>
   </Text>
-  <TextField fx:id="eventDateField" layoutX="225.0" layoutY="181.0" prefHeight="25.0"
+  <TextField fx:id="eventDateField" layoutX="225.0" layoutY="169.0" prefHeight="25.0"
     prefWidth="165.0"/>
-  <Button fx:id="removeEventButton" layoutX="407.0" layoutY="253.0" mnemonicParsing="false"
+  <Button fx:id="removeEventButton" layoutX="437.0" layoutY="253.0" mnemonicParsing="false"
     onAction="#addEvent" prefHeight="25.0" prefWidth="83.0" text="Remove Event"/>
-  <Button fx:id="editEventButton" layoutX="407.0" layoutY="302.0" mnemonicParsing="false"
-    onAction="#addEvent" prefHeight="25.0" prefWidth="83.0" text="Edit Event"/>
+  <Button fx:id="editEventButton" layoutX="437.0" layoutY="302.0" mnemonicParsing="false"
+    onAction="#updateEvent" prefHeight="25.0" prefWidth="83.0" text="Edit Event"/>
+  <Text fx:id="eventIDText" fontSmoothingType="LCD" layoutX="14.0" layoutY="219.0"
+    strokeType="OUTSIDE" strokeWidth="0.0" text="Event ID:" wrappingWidth="138.72655928134918">
+    <font>
+      <Font name="SansSerif Italic" size="24.0"/>
+    </font>
+  </Text>
+  <TextField fx:id="eventIDField" layoutX="225.0" layoutY="197.0" prefHeight="25.0"
+    prefWidth="165.0"/>
 </AnchorPane>
