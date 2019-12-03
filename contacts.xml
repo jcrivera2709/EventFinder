@@ -3,31 +3,37 @@
 <contact>
 	<first_name>Carol</first_name>
 	<last_name>Bado</last_name>
-	<phone_number>123456789</phone_number>
+	<phone_number>1234567890</phone_number>
 	<notes>karl</notes>
 </contact>
 <contact>
 	<first_name>Jaisson</first_name>
 	<last_name>Lazo</last_name>
-	<phone_number>123456789</phone_number>
+	<phone_number>1234567890</phone_number>
 	<notes>Jai</notes>
 </contact>
 <contact>
 	<first_name>Neel</first_name>
 	<last_name>Patel</last_name>
-	<phone_number>123456789</phone_number>
+	<phone_number>1234567890</phone_number>
 	<notes>neo</notes>
 </contact>
 <contact>
 	<first_name>José</first_name>
 	<last_name>Rivera</last_name>
-	<phone_number>123456789</phone_number>
+	<phone_number>1234567890</phone_number>
 	<notes>quality</notes>
 </contact>
 <contact>
 	<first_name>Jose</first_name>
 	<last_name>Ruiz-Ramon</last_name>
-	<phone_number>123456789</phone_number>
+	<phone_number>1234567890</phone_number>
 	<notes>Pipo</notes>
+</contact>
+<contact>
+	<first_name>Test1</first_name>
+	<last_name>dummy</last_name>
+	<phone_number>5613159131</phone_number>
+	<notes>call</notes>
 </contact>
 </contacts>

@@ -25,7 +25,7 @@ public class ContactController {
     if (phoneNumberIsValid(phoneNumber)) {
       contact = new Contact(firstName, lastName, phoneNumber, notes);
     } else {
-      contact = new Contact(firstName, lastName, "Phone number is invalid", notes);
+      contact = new Contact(firstName, lastName, "Phone number is invalid.", notes);
     }
     return contact;
   }
@@ -41,12 +41,23 @@ public class ContactController {
     contact.setFirstName(firstNameField.getText());
     contact.setLastName(lastNameField.getText());
     contact.setPhoneNumber(phoneNumberField.getText());
-    contact.setNotes(notesField.getText());
+
+    if (phoneNumberIsValid(phoneNumberField.getText())) {
+      contact.setPhoneNumber(phoneNumberField.getText());
+    } else {
+      contact.setPhoneNumber("Phone number is invalid.");
+    }
+    if (!notesField.getText().isEmpty()) {
+      contact.setNotes(notesField.getText());
+    } else {
+      contact.setNotes("Empty.");
+    }
+
   }
 
   private boolean phoneNumberIsValid(String phoneNumber) {
     boolean isValid = false;
-    if (phoneNumber.matches("[0-9]{3}-[0-9]{3}-[0-9]{4}") || phoneNumber.matches("[0-9]{9}")) {
+    if (phoneNumber.matches("[0-9]{3}-[0-9]{3}-[0-9]{4}") || phoneNumber.matches("[0-9]{10}")) {
       isValid = true;
     }
     return isValid;
