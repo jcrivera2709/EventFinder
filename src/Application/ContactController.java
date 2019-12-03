@@ -21,18 +21,13 @@ public class ContactController {
     String lastName = lastNameField.getText();
     String phoneNumber = phoneNumberField.getText();
     String notes = notesField.getText();
-
-    isPhoneNumberValid(phoneNumber);
-
-    return new Contact(firstName, lastName, phoneNumber, notes);
-  }
-
-  private boolean isPhoneNumberValid(String phoneNumber) {
-    boolean isValid = false;
-    if (phoneNumber.matches("[0-9]{3}-[0-9]{3}-[0-9]{4}") || phoneNumber.matches("[0-9]{9}")) {
-      isValid = true;
+    Contact contact;
+    if (phoneNumberIsValid(phoneNumber)) {
+      contact = new Contact(firstName, lastName, phoneNumber, notes);
+    } else {
+      contact = new Contact(firstName, lastName, "Phone number is invalid", notes);
     }
-    return isValid;
+    return contact;
   }
 
   void editContact(Contact contact) {
@@ -47,5 +42,13 @@ public class ContactController {
     contact.setLastName(lastNameField.getText());
     contact.setPhoneNumber(phoneNumberField.getText());
     contact.setNotes(notesField.getText());
+  }
+
+  private boolean phoneNumberIsValid(String phoneNumber) {
+    boolean isValid = false;
+    if (phoneNumber.matches("[0-9]{3}-[0-9]{3}-[0-9]{4}") || phoneNumber.matches("[0-9]{9}")) {
+      isValid = true;
+    }
+    return isValid;
   }
 }

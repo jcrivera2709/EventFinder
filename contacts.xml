@@ -36,4 +36,10 @@
 	<phone_number>7809087</phone_number>
 	<notes>dummyDemo </notes>
 </contact>
+<contact>
+	<first_name>Student</first_name>
+	<last_name>Rivear</last_name>
+	<phone_number>561</phone_number>
+	<notes>haha</notes>
+</contact>
 </contacts>
