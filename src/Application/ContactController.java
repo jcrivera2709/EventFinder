@@ -22,7 +22,17 @@ public class ContactController {
     String phoneNumber = phoneNumberField.getText();
     String notes = notesField.getText();
 
+    isPhoneNumberValid(phoneNumber);
+
     return new Contact(firstName, lastName, phoneNumber, notes);
+  }
+
+  private boolean isPhoneNumberValid(String phoneNumber) {
+    boolean isValid = false;
+    if (phoneNumber.matches("[0-9]{3}-[0-9]{3}-[0-9]{4}") || phoneNumber.matches("[0-9]{9}")) {
+      isValid = true;
+    }
+    return isValid;
   }
 
   void editContact(Contact contact) {

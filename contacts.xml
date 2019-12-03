@@ -30,4 +30,10 @@
 	<phone_number>894</phone_number>
 	<notes>Pipo</notes>
 </contact>
+<contact>
+	<first_name>Demo</first_name>
+	<last_name>Default</last_name>
+	<phone_number>7809087</phone_number>
+	<notes>dummyDemo </notes>
+</contact>
 </contacts>
