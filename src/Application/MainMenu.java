@@ -14,15 +14,13 @@ public class MainMenu {
 
   // All the different Buttons
   public Button webButton;
-  private Button mainMenuButton;
+  public Button mainMenuButton;
   public Button eventMenuButton;
   public Button graphsButton;
   public Button loginMenuButton;
-  public Button contactsButton;
 
   /**
    * This function handles the events inside this window.
-   *
    * @param actionEvent
    * @throws Exception
    */
@@ -45,9 +43,6 @@ public class MainMenu {
     } else if (actionEvent.getSource() == loginMenuButton) {
       stage = (Stage) eventMenuButton.getScene().getWindow();
       root = FXMLLoader.load(getClass().getResource("Login.fxml"));
-    } else if (actionEvent.getSource() == contactsButton) {
-      stage = (Stage) eventMenuButton.getScene().getWindow();
-      root = FXMLLoader.load(getClass().getResource("contacts.fxml"));
     } else {
       stage = (Stage) mainMenuButton.getScene().getWindow();
       root = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));

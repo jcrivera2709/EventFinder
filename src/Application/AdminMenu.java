@@ -18,7 +18,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
- * @author Jose Rivera, Jose Ruiz-Ramon ,,
+ * @author Jose Rivera, Jose Ruiz-Ramon
  */
 
 public class AdminMenu {
@@ -159,9 +159,10 @@ public class AdminMenu {
 
     //  String id = eventId.getText();
 
-    String id = "2"; // add textbox for id
+    String id = eventIDField.getText();
     String eventDescriptionString = eventDescription.getText();
     String eventNameString = eventNameField.getText();
+    String eventLocationString = eventLocationField.getText();
 
     //String eventDateString = eventDateField.getText(); // add textbox for eventdate
     String eventDateString = "March 5, 2020";
@@ -174,8 +175,8 @@ public class AdminMenu {
     BufferedWriter bw = new BufferedWriter(new FileWriter(fileUrl, true));
 
     appendData = String
-        .format("ID:%s\nEVENT NAME: %s\nEVENT DATE: %s\nEVENT DESCRIPTION: %s\nEVENT TYPE: %s\n",
-            id, eventNameString, eventDateString, eventDescriptionString, eventType);
+        .format("ID:%s\nEVENT NAME: %s\nEVENT DATE: %s\nEVENT LOCATION: %s\nEVENT DESCRIPTION: %s\nEVENT TYPE: %s\n",
+            id, eventNameString, eventDateString, eventLocationString, eventDescriptionString, eventType);
 
     bw.write(appendData);
     bw.close();
@@ -214,7 +215,7 @@ public class AdminMenu {
         WE NEED THE REMOVE BTN
      */
 
-    String id = "2"; // we need a field for id
+    String id = eventIDField.getText(); // we need a field for id
     String fileUrl = "src/Application/events.csv";
     List<String> linebyline = new ArrayList<String>();
     BufferedReader reader = new BufferedReader(new FileReader(fileUrl));
@@ -240,10 +241,12 @@ public class AdminMenu {
         System.out.println(linebyline.get(i + 2));
         System.out.println(linebyline.get(i + 3));
         System.out.println(linebyline.get(i + 4));
+        System.out.println(linebyline.get(i + 5));
 
         linebyline.remove(i);   // id line
         linebyline.remove(i);   // event name line
         linebyline.remove(i);   // date line
+        linebyline.remove(i);   // location line
         linebyline.remove(i);   // event desc line
         linebyline.remove(i);   // event type line
         break;
@@ -277,7 +280,7 @@ public class AdminMenu {
           WE NEED THE UPDATE BTN
      */
 
-    String id = "we need a field for id";
+    String id = eventIDField.getText();
 
     String fileUrl = "src/Application/events.csv";
     List<String> linebyline = new ArrayList<String>();
@@ -304,16 +307,19 @@ public class AdminMenu {
         System.out.println(linebyline.get(i + 2));
         System.out.println(linebyline.get(i + 3));
         System.out.println(linebyline.get(i + 4));
+        System.out.println(linebyline.get(i + 5));
 
         linebyline.remove(i);   // id line
         linebyline.remove(i);   // event name line
         linebyline.remove(i);   // date line
+        linebyline.remove(i);   // location line
         linebyline.remove(i);   // event desc line
         linebyline.remove(i);   // event type line
 
         linebyline.add("ID:" + id);
         linebyline.add("EVENT NAME: " + eventNameField.getText());
-        linebyline.add("EVENT DATE: " + "eventDate"); // we need a date TextBox
+        linebyline.add("EVENT DATE: " + eventDateField.getText());
+        linebyline.add("EVENT LOCATION: " + eventLocationField.getText());
         linebyline.add("EVENT DESCRIPTION: " + eventDescription.getText());
         linebyline.add("EVENT TYPE: " + categoryBox.getValue().toString());
 
