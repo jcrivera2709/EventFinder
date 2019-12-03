@@ -7,7 +7,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- * @author José Rivera, Jose Ruiz-Ramon, Neel Patel, Carolina Bado-Cortez, Jaisson Lazo.
+ * @author José Rivera, Jose Ruiz-Ramon, Neel Patel, Carolina Bado-Cortes, Jaisson Lazo.
  */
 
 public class Main extends Application {
@@ -26,7 +26,7 @@ public class Main extends Application {
     // Sets the first scene for the program the following scenes are found in the controller
     Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
     Scene mainMenu = new Scene(root, SCENE_WIDTH, SCENE_HEIGHT);
-    stage.setTitle("BULLETINER");
+    stage.setTitle("BULLETIN");
     stage.setScene(mainMenu);
     mainMenu.getStylesheets().add(Main.class.getResource("style.css").toExternalForm());
     stage.show();

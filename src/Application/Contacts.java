@@ -4,11 +4,13 @@ import Application.datamodel.Contact;
 import Application.datamodel.ContactData;
 import java.io.IOException;
 import java.util.Optional;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.BorderPane;
 
@@ -17,6 +19,8 @@ import javafx.scene.layout.BorderPane;
  */
 public class Contacts {
 
+  public MenuItem mainMenu;
+  public MenuItem logIn;
   @FXML
   private BorderPane mainPanel;
 
@@ -119,5 +123,9 @@ public class Contacts {
       data.deleteContact(selectedContact);
       data.saveContacts();
     }
+  }
+
+  public void goTo(ActionEvent actionEvent) throws IOException {
+
   }
 }
