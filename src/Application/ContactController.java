@@ -22,10 +22,14 @@ public class ContactController {
     String phoneNumber = phoneNumberField.getText();
     String notes = notesField.getText();
     Contact contact;
-    if (phoneNumberIsValid(phoneNumber)) {
+    if (phoneNumberIsValid(phoneNumber) && !notes.isEmpty()) {
       contact = new Contact(firstName, lastName, phoneNumber, notes);
-    } else {
+    } else if (phoneNumberIsValid(phoneNumber) && notes.isEmpty()) {
+      contact = new Contact(firstName, lastName, phoneNumber, "Empty.");
+    } else if (!phoneNumberIsValid(phoneNumber) && !notes.isEmpty()) {
       contact = new Contact(firstName, lastName, "Phone number is invalid.", notes);
+    } else {
+      contact = new Contact(firstName, lastName, "Phone number is invalid.", "Empty.");
     }
     return contact;
   }
