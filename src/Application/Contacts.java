@@ -55,8 +55,8 @@ public class Contacts {
 
     Optional<ButtonType> result = dialog.showAndWait();
     if (result.isPresent() && result.get() == ButtonType.OK) {
-      ContactDialog contactDialog = fxmlLoader.getController();
-      Contact newContact = contactDialog.getNewContact();
+      ContactController contactCon = fxmlLoader.getController();
+      Contact newContact = contactCon.getNewContact();
       data.addContacts(newContact);
       data.saveContacts();
     }
@@ -91,12 +91,12 @@ public class Contacts {
     dialog.getDialogPane().getButtonTypes().add(ButtonType.OK);
     dialog.getDialogPane().getButtonTypes().add(ButtonType.CANCEL);
 
-    ContactDialog contactDialog = fxmlLoader.getController();
-    contactDialog.editContact(selectedContact);
+    ContactController contactCon = fxmlLoader.getController();
+    contactCon.editContact(selectedContact);
 
     Optional<ButtonType> result = dialog.showAndWait();
     if (result.isPresent() && result.get() == ButtonType.OK) {
-      contactDialog.updateContact(selectedContact);
+      contactCon.updateContact(selectedContact);
       data.saveContacts();
     }
   }
