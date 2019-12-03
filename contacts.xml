@@ -1,3 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <contacts>
+<contact>
+	<first_name>Carol</first_name>
+	<last_name>Bado</last_name>
+	<phone_number>1234</phone_number>
+	<notes>karl</notes>
+</contact>
+<contact>
+	<first_name>Jaisson</first_name>
+	<last_name>Lazo</last_name>
+	<phone_number>789</phone_number>
+	<notes>Jai</notes>
+</contact>
+<contact>
+	<first_name>Neel</first_name>
+	<last_name>Patel</last_name>
+	<phone_number>9897</phone_number>
+	<notes>neo</notes>
+</contact>
+<contact>
+	<first_name>José</first_name>
+	<last_name>Rivera</last_name>
+	<phone_number>560</phone_number>
+	<notes>quality</notes>
+</contact>
+<contact>
+	<first_name>Jose</first_name>
+	<last_name>Ruiz-Ramon</last_name>
+	<phone_number>894</phone_number>
+	<notes>Pipo</notes>
+</contact>
 </contacts>

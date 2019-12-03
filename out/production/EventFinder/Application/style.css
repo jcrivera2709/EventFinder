@@ -120,13 +120,19 @@
   -fx-padding: 5;
 }
 
-.combo-box {
+.combo-box .cell {
   -fx-text-fill: white;
-  -fx-font-size: 15pt;
+  -fx-font-size: 10pt;
   -fx-background-color: linear-gradient(lightgreen, #178027);
-  -fx-border-radius: 20;
-  -fx-background-radius: 20;
-  -fx-padding: 5;
+}
+.combo-box-popup .list-view .list-cell:filled:hover {
+  -fx-background-color: #617ce6;
+}
+
+#eventIDText{
+  -fx-fill: white, silver;
+  -fx-font-weight: bold;
+  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.5), 0, 0, 0, 1);
 }
 
 

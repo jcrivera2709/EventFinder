@@ -16,12 +16,10 @@
         <MenuItem onAction="#showEditContactMessage" text="Edit..." />
         <MenuItem onAction="#deleteContact" text="Delete..." />
       </Menu>
-         <Menu mnemonicParsing="false" text="Go To">
-           <items>
-             <MenuItem fx:id="mainMenu" mnemonicParsing="false" onAction="#goTo" text="Main Menu" />
-               <MenuItem mnemonicParsing="false" text="Log In" />
-           </items>
-         </Menu>
+      <Menu mnemonicParsing="false" text="Go To">
+        <MenuItem mnemonicParsing="false" onAction="#goToMenu" text="Main Menu" />
+        <MenuItem mnemonicParsing="false" onAction="#goToLogIn" text="Log In" />
+      </Menu>
     </MenuBar>
   </top>
   <bottom>
