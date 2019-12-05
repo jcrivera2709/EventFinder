@@ -1,9 +1,12 @@
-package Application;
-/* Created by Neel Patel on 10/27/19. */
+package application;
 
+import application.datamodel.Contact;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
-import Application.datamodel.Contact;
+
+/**
+ *  Created by Neel Patel on 10/27/19.
+ */
 
 public class ContactController {
 

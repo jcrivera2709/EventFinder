@@ -1,5 +1,14 @@
-package Application;
+package application;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -8,16 +17,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-
-import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
+ * Admin menu allows you to create/add/edit/remove events from the event list.
+ *
  * @author Jose Rivera, Jose Ruiz-Ramon
  */
 
@@ -33,14 +38,14 @@ public class AdminMenu {
 
   // Text for the events
   public Text eventLocationTxt;
-  public Text eventIDText;
+  public Text eventIdText;
   public Text eventNameTxt;
   public Text addEventTxt;
   public Text eventDescTxt;
   public Text eventDateText;
 
   // Text fields and areas.
-  public TextField eventIDField;
+  public TextField eventIdField;
   public TextField eventNameField;
   public TextField eventLocationField;
   public TextField eventDateField;
@@ -153,18 +158,18 @@ public class AdminMenu {
   /**
    * This function adds the events when the Add Event button is clicked.
    *
-   * @throws IOException
+   * @throws IOException throws io exception.
    */
   public void addEvent() throws IOException {
 
     //  String id = eventId.getText();
 
-    String id = eventIDField.getText();
+    String id = eventIdField.getText();
     String eventDescriptionString = eventDescription.getText();
     String eventNameString = eventNameField.getText();
     String eventLocationString = eventLocationField.getText();
 
-    //String eventDateString = eventDateField.getText(); // add textbox for eventdate
+    //String eventDateString = eventDateField.getText(); // add text box for event date
     String eventDateString = "March 5, 2020";
 
     String eventType = categoryBox.getValue().toString();
@@ -175,8 +180,11 @@ public class AdminMenu {
     BufferedWriter bw = new BufferedWriter(new FileWriter(fileUrl, true));
 
     appendData = String
-        .format("ID:%s\nEVENT NAME: %s\nEVENT DATE: %s\nEVENT LOCATION: %s\nEVENT DESCRIPTION: %s\nEVENT TYPE: %s\n",
-            id, eventNameString, eventDateString, eventLocationString, eventDescriptionString, eventType);
+        .format(
+            "ID:%s\nEVENT NAME: %s\nEVENT DATE: %s\nEVENT LOCATION: %s\nEVENT DESCRIPTION: "
+                + "%s\nEVENT TYPE: %s\n",
+            id, eventNameString, eventDateString, eventLocationString, eventDescriptionString,
+            eventType);
 
     bw.write(appendData);
     bw.close();
@@ -208,14 +216,14 @@ public class AdminMenu {
   /**
    * This function removes the events when the Remove Event button is clicked. ()
    *
-   * @throws IOException
+   * @throws IOException is thrown
    */
   public void removeEvent() throws IOException {
     /*
-        WE NEED THE REMOVE BTN
-     */
+          WE NEED THE REMOVE BTN
+    */
 
-    String id = eventIDField.getText(); // we need a field for id
+    String id = eventIdField.getText(); // we need a field for id
     String fileUrl = "src/Application/events.csv";
     List<String> linebyline = new ArrayList<String>();
     BufferedReader reader = new BufferedReader(new FileReader(fileUrl));
@@ -261,7 +269,7 @@ public class AdminMenu {
     }
     String finalString = finalSb.toString();
 
-//    System.out.println(finalString);
+    //    System.out.println(finalString);
 
     BufferedWriter writer = new BufferedWriter(new FileWriter(fileUrl));
 
@@ -273,14 +281,14 @@ public class AdminMenu {
   /**
    * This function updates/edits the selected event by ID from textBox.
    *
-   * @throws IOException
+   * @throws IOException is thrown
    */
   public void updateEvent() throws IOException {
     /*
-          WE NEED THE UPDATE BTN
-     */
+            WE NEED THE UPDATE BTN
+    */
 
-    String id = eventIDField.getText();
+    String id = eventIdField.getText();
 
     String fileUrl = "src/Application/events.csv";
     List<String> linebyline = new ArrayList<String>();
@@ -335,7 +343,7 @@ public class AdminMenu {
     }
     String finalString = finalSb.toString();
 
-//    System.out.println(finalString);
+    //    System.out.println(finalString);
 
     BufferedWriter writer = new BufferedWriter(new FileWriter(fileUrl));
 
@@ -345,6 +353,13 @@ public class AdminMenu {
 
   } // removeEvent()
 
+  /**
+   * This method handles the buttons of the scene, it will change the scene depending on what button
+   * is pressed.
+   *
+   * @param actionEvent gets the action from the scene.
+   * @throws IOException throws exception.
+   */
   public void handleButtonAction(ActionEvent actionEvent) throws IOException {
 
     Stage stage = null;

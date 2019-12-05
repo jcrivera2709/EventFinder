@@ -1,8 +1,9 @@
-package Application;
+package application;
 
 /**
+ * Enum of all the categories. This enum will be used for chart outputs.
+ *
  * @author Jose Rivera, Jose Ruiz-Ramon
- * This enum will be used for chart outputs.
  */
 public enum Categories {
 

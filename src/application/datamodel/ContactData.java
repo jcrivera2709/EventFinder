@@ -1,7 +1,4 @@
-package Application.datamodel;
-/** Created by Neel Patel on 10/27/19.
- * from reference and help from masterclass JAVA on udemy
- * */
+package application.datamodel;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -21,6 +18,9 @@ import javax.xml.stream.events.StartDocument;
 import javax.xml.stream.events.StartElement;
 import javax.xml.stream.events.XMLEvent;
 
+/**
+ * Created by Neel Patel on 10/27/19. From reference and help from masterclass JAVA on Udemy
+ */
 public class ContactData {
 
   private static final String CONTACTS_FILE = "contacts.xml";
@@ -52,6 +52,9 @@ public class ContactData {
     contacts.remove(item);
   }
 
+  /**
+   * Loads contacts to the address book.
+   */
   public void loadContacts() {
     try {
       // First, create a new XMLInputFactory
@@ -114,6 +117,9 @@ public class ContactData {
     }
   }
 
+  /**
+   * After accepting the contacts info it will save it to the fxml file.
+   */
   public void saveContacts() {
 
     try {
@@ -178,15 +184,15 @@ public class ContactData {
     XMLEvent end = eventFactory.createDTD("\n");
     XMLEvent tab = eventFactory.createDTD("\t");
     // created Start node
-    StartElement sElement = eventFactory.createStartElement("", "", name);
+    StartElement startElement = eventFactory.createStartElement("", "", name);
     eventWriter.add(tab);
-    eventWriter.add(sElement);
+    eventWriter.add(startElement);
     // created Content
     Characters characters = eventFactory.createCharacters(value);
     eventWriter.add(characters);
     // created End node
-    EndElement eElement = eventFactory.createEndElement("", "", name);
-    eventWriter.add(eElement);
+    EndElement endElement = eventFactory.createEndElement("", "", name);
+    eventWriter.add(endElement);
     eventWriter.add(end);
   }
 }

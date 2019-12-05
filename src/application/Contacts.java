@@ -1,7 +1,7 @@
-package Application;
+package application;
 
-import Application.datamodel.Contact;
-import Application.datamodel.ContactData;
+import application.datamodel.Contact;
+import application.datamodel.ContactData;
 import java.io.IOException;
 import java.util.Optional;
 import javafx.fxml.FXML;
@@ -30,12 +30,18 @@ public class Contacts {
 
   private ContactData data;
 
+  /**
+   * Loads the contacts from database.
+   */
   public void initialize() {
     data = new ContactData();
     data.loadContacts();
     contactsTable.setItems(data.getContacts());
   }
 
+  /**
+   * When you go to add contact it will pop up with a message with information to fill out.
+   */
   @FXML
   public void showAddContactMessage() {
     Dialog<ButtonType> dialog = new Dialog<>();

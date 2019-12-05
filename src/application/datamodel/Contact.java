@@ -1,15 +1,29 @@
-package Application.datamodel;
-/** Created by Neel Patel on 10/27/19. */
+package application.datamodel;
+
 import javafx.beans.property.SimpleStringProperty;
 
+/**
+ * Created by Neel Patel on 10/27/19.
+ */
+
 public class Contact {
+
   private SimpleStringProperty firstName = new SimpleStringProperty("");
   private SimpleStringProperty lastName = new SimpleStringProperty("");
   private SimpleStringProperty phoneNumber = new SimpleStringProperty("");
   private SimpleStringProperty notes = new SimpleStringProperty("");
 
-  public Contact() {}
+  public Contact() {
+  }
 
+  /**
+   * Contact is a new person that the user has added to remember them.
+   *
+   * @param firstName   the first name of the user
+   * @param lastName    the last name of the user
+   * @param phoneNumber the phone number of the user
+   * @param notes       any extra description of the user
+   */
   public Contact(String firstName, String lastName, String phoneNumber, String notes) {
     this.firstName.set(firstName);
     this.lastName.set(lastName);

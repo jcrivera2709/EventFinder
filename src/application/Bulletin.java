@@ -1,5 +1,9 @@
-package Application;
+package application;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.lang.StringBuilder;
+import java.util.Scanner;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -9,22 +13,19 @@ import javafx.scene.control.TextArea;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.lang.StringBuilder;
-import java.util.Scanner;
-
 public class Bulletin {
 
   // All the different Buttons
   public Button webButton;
   public Button mainMenuButton;
-  public Button eventMenuButton;
   public Button graphsButton;
   public TextArea dataArea;
   public Text bulletinTxt;
 
-  public void initialize() throws FileNotFoundException {
+  /**
+   * Runs immediately on scene start up.
+   */
+  public void initialize() {
     try {
 
       File data = new File("src\\Application\\events.csv");
@@ -35,7 +36,7 @@ public class Bulletin {
 
       while (fileReader.hasNext()) {
         String line = fileReader.nextLine();
-        sb.append(line + "\n");
+        sb.append(line).append("\n");
       }
 
       String output = sb.toString();
@@ -48,6 +49,12 @@ public class Bulletin {
 
   }
 
+  /**
+   * Handles the buttons that changes scenes.
+   *
+   * @param actionEvent takes in actions from scene
+   * @throws Exception throws exception
+   */
   public void handleButtonAction(ActionEvent actionEvent) throws Exception {
 
     Stage stage;
@@ -61,9 +68,6 @@ public class Bulletin {
     } else if (actionEvent.getSource() == graphsButton) {
       stage = (Stage) graphsButton.getScene().getWindow();
       root = FXMLLoader.load(getClass().getResource("Graphs.fxml"));
-    } else if (actionEvent.getSource() == eventMenuButton) {
-      stage = (Stage) eventMenuButton.getScene().getWindow();
-      root = FXMLLoader.load(getClass().getResource("bulletin.fxml"));
     } else {
       stage = (Stage) mainMenuButton.getScene().getWindow();
       root = FXMLLoader.load(getClass().getResource("mainMenu.fxml"));
