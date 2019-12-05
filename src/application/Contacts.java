@@ -69,6 +69,10 @@ public class Contacts {
     }
   }
 
+  /**
+   * If you press edit contacts it will show a message to edit their info. Must select which user
+   * you want to edit an error message will pop up.
+   */
   @FXML
   public void showEditContactMessage() {
     Contact selectedContact = contactsTable.getSelectionModel().getSelectedItem();
@@ -108,6 +112,10 @@ public class Contacts {
     }
   }
 
+  /**
+   * If you press delete contact it will show a message to delete their info. Must select which user
+   * * you want to delete or an error message will pop up.
+   */
   public void deleteContact() {
     Contact selectedContact = contactsTable.getSelectionModel().getSelectedItem();
     if (selectedContact == null) {
@@ -122,8 +130,8 @@ public class Contacts {
     Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
     alert.setTitle("Delete Contact");
     alert.setContentText(null);
-    alert.setContentText("Are you sure you want to remove the selected contact: " +
-        selectedContact.getFirstName() + " " + selectedContact.getLastName());
+    alert.setContentText("Are you sure you want to remove the selected contact: "
+        + selectedContact.getFirstName() + " " + selectedContact.getLastName());
 
     Optional<ButtonType> result = alert.showAndWait();
     if (result.isPresent() && result.get() == ButtonType.OK) {
@@ -132,6 +140,11 @@ public class Contacts {
     }
   }
 
+  /**
+   * If the go to menu option is pressed it will change the scene.
+   *
+   * @throws IOException throws exception
+   */
   public void goToMenu() throws IOException {
 
     Stage stage;
@@ -151,6 +164,11 @@ public class Contacts {
 
   }
 
+  /**
+   * If the go to log in option is pressed it will change the scene.
+   *
+   * @throws IOException throws exception
+   */
   public void goToLogIn() throws IOException {
     Stage stage;
     Parent root;

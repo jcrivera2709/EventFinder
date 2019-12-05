@@ -11,8 +11,6 @@ import javafx.stage.Stage;
 
 public class WebEngine {
 
-  // All the different Buttons
-  public Button webButton;
   public Button mainMenuButton;
   public Button eventMenuButton;
   public Button graphsButton;
@@ -20,13 +18,22 @@ public class WebEngine {
   @FXML
   private WebView webPage = new WebView();
 
+  /**
+   * Runs web engine on start up.
+   */
   public void initialize() {
 
-    //currently sends you to the fgcu organizations website
+    //currently sends you to the FGCU organizations website
     javafx.scene.web.WebEngine engine = webPage.getEngine();
     engine.load("https://fgcu.campuslabs.com/engage/organizations");
   }
 
+  /**
+   * Handle button exceptions to change scenes when the button is pressed.
+   *
+   * @param actionEvent gets the action event from the current scene.
+   * @throws Exception throws exception.
+   */
   public void handleButtonAction(ActionEvent actionEvent) throws Exception {
 
     Stage stage;
@@ -34,10 +41,7 @@ public class WebEngine {
 
     // Based on button pressed if statement will load the selected scene.
     // if not scene is selected the default scene will be the main menu.
-    if (actionEvent.getSource() == webButton) {
-      stage = (Stage) webButton.getScene().getWindow();
-      root = FXMLLoader.load(getClass().getResource("WebEngine.fxml"));
-    } else if (actionEvent.getSource() == graphsButton) {
+    if (actionEvent.getSource() == graphsButton) {
       stage = (Stage) graphsButton.getScene().getWindow();
       root = FXMLLoader.load(getClass().getResource("Graphs.fxml"));
     } else if (actionEvent.getSource() == eventMenuButton) {

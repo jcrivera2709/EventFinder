@@ -7,6 +7,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
+ * Main runs the program starting at the login screen with the SCENE_WIDTH and SCENE_HEIGHT used as
+ * the starting size.
+ *
  * @author José Rivera, Jose Ruiz-Ramon, Neel Patel, Carolina Bado-Cortes, Jaisson Lazo.
  */
 
@@ -16,6 +19,8 @@ public class Main extends Application {
   static final int SCENE_HEIGHT = 500;
 
   /**
+   * Starts the application.
+   *
    * @param stage is the scene that the will load when the program runs.
    * @throws Exception the exception is attributed to the possibility of GUI failure.
    */

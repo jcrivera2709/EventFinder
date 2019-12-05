@@ -24,17 +24,18 @@ public class Login {
   }
 
   /**
-   * This function executes the login algo that will check the credentials, if false, nothing will
-   * happen.
+   * This function executes the login algorithm that will check the credentials, if false, nothing
+   * will happen.
    *
-   * @throws IOException
+   * @throws IOException throws exception
    */
-  public void LogInButton() throws IOException {
+  public void logInButton() throws IOException {
 
     Stage stage = null;
     Parent root = null;
 
-    // depending on the the username and password it will send you the either main menu or admin screen
+    // depending on the the username and password it will send you the either main menu or
+    // admin screen
     if (users.containsKey(userField.getText()) && users.get(userField.getText())
         .equals(users.get(userField.getText()))) {
       stage = (Stage) loginButton.getScene().getWindow();

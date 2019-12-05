@@ -23,8 +23,8 @@ public class MainMenu {
   /**
    * This function handles the events inside this window.
    *
-   * @param actionEvent
-   * @throws Exception
+   * @param actionEvent action event from scene is used.
+   * @throws Exception throws exception.
    */
   public void handleButtonAction(ActionEvent actionEvent) throws Exception {
 
