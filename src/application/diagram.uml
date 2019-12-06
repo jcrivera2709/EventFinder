@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="223.25" y="0.0">Application.ContactController</node>
+    <node x="0.0" y="154.0">Application.AdminMenu</node>
+    <node x="55.70386904761904" y="562.0">Application.Graphs</node>
+    <node x="776.0" y="308.0">Application.MainMenu</node>
+    <node x="269.0" y="253.0">Application.Contacts</node>
+    <node x="1045.0" y="297.0">Application.Bulletin</node>
+    <node x="558.5" y="11.0">Application.Main</node>
+    <node x="507.0" y="297.0">Application.WebEngine</node>
+    <node x="1284.75" y="22.0">Application.CsvToData</node>
+    <node x="3.25" y="34.0">Application.Categories</node>
+    <node x="1314.0" y="297.0">Application.Login</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Application.WebEngine" target="Application.Main">
+      <point x="0.0" y="-36.0" />
+      <point x="0.0" y="36.0" />
+    </edge>
+    <edge source="Application.MainMenu" target="Application.Main">
+      <point x="0.0" y="-25.0" />
+      <point x="900.5" y="134.0" />
+      <point x="652.3571428571429" y="134.0" />
+      <point x="20.85714285714289" y="36.0" />
+    </edge>
+    <edge source="Application.Graphs" target="Application.Main">
+      <point x="83.0" y="-36.0" />
+      <point x="263.20386904761904" y="537.0" />
+      <point x="496.5" y="537.0" />
+      <point x="496.5" y="134.0" />
+      <point x="610.6428571428571" y="134.0" />
+      <point x="-20.85714285714289" y="36.0" />
+    </edge>
+    <edge source="Application.Contacts" target="Application.ContactController">
+      <point x="-54.25" y="-80.0" />
+      <point x="0.0" y="47.0" />
+    </edge>
+    <edge source="Application.Login" target="Application.CsvToData">
+      <point x="36.25" y="-36.0" />
+      <point x="0.0" y="25.0" />
+    </edge>
+    <edge source="Application.Login" target="Application.Main">
+      <point x="-36.25" y="-36.0" />
+      <point x="1350.25" y="114.0" />
+      <point x="694.0714285714286" y="114.0" />
+      <point x="62.571428571428555" y="36.0" />
+    </edge>
+    <edge source="Application.AdminMenu" target="Application.Categories">
+      <point x="-62.25" y="-179.0" />
+      <point x="0.0" y="13.0" />
+    </edge>
+    <edge source="Application.Bulletin" target="Application.Main">
+      <point x="0.0" y="-36.0" />
+      <point x="1169.5" y="124.0" />
+      <point x="673.2142857142858" y="124.0" />
+      <point x="41.71428571428578" y="36.0" />
+    </edge>
+    <edge source="Application.Graphs" target="Application.AdminMenu">
+      <point x="-83.0" y="-36.0" />
+      <point x="97.20386904761904" y="537.0" />
+      <point x="62.25" y="537.0" />
+      <point x="-62.25" y="179.0" />
+    </edge>
+    <edge source="Application.Contacts" target="Application.Main">
+      <point x="54.25" y="-80.0" />
+      <point x="431.75" y="124.0" />
+      <point x="589.7857142857143" y="124.0" />
+      <point x="-41.714285714285666" y="36.0" />
+    </edge>
+    <edge source="Application.AdminMenu" target="Application.Main">
+      <point x="62.25" y="-179.0" />
+      <point x="186.75" y="114.0" />
+      <point x="568.9285714285714" y="114.0" />
+      <point x="-62.571428571428555" y="36.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.9" x="593.0" y="328.0" />
+  <SelectedNodes>
+    <node>Application.ContactController</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>protected</VISIBILITY>
+</Diagram>
+

@@ -1,5 +1,7 @@
 package application;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +13,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+/**
+ * @author Jose Ruiz-Ramon, Jose Rivera
+ */
 public class Createaccount {
 
   public TextField usernameField;
@@ -19,12 +24,31 @@ public class Createaccount {
   public Button createAccountButton;
   public Button backButton;
 
-  public void createAccount(ActionEvent actionEvent) {
+  /**
+   *
+   * @param actionEvent
+   * @throws IOException
+   *
+   * This function creates user accounts.
+   */
+  public void createAccount(ActionEvent actionEvent) throws IOException {
+
+    String fileUrl = "src/Application/userAccs.csv";
+    BufferedWriter bw = new BufferedWriter(new FileWriter(fileUrl, true));
+
     String username = usernameField.getText();
     String password = newPassword.getText();
     String confirmPass = confirmPassword.getText();
 
     if (isPasswordValid(password, confirmPass)) {
+
+        String appendData = String
+                .format("\n%s,%s" , username, password);
+
+        bw.write(appendData);
+        bw.close();
+
+
 
     } else {
       Alert notSamePassword = new Alert(AlertType.ERROR);
