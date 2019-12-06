@@ -29,7 +29,7 @@ public class WebEngine {
   }
 
   /**
-   * Handle button exceptions to change scenes when the button is pressed.
+   * Handles button exceptions to change scenes when the button is pressed.
    *
    * @param actionEvent gets the action event from the current scene.
    * @throws Exception throws exception.

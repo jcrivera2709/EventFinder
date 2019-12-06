@@ -61,6 +61,12 @@ public class Createaccount {
 
   }
 
+  /**
+   * This function checks if the password is valid.
+   * @param password
+   * @param confirmPass
+   * @return
+   */
   private boolean isPasswordValid(String password, String confirmPass) {
     boolean match = false;
     if (password.equals(confirmPass)) {
@@ -69,6 +75,11 @@ public class Createaccount {
     return match;
   }
 
+  /**
+   * This function is the event handler for stage switching.
+   * @param actionEvent
+   * @throws IOException
+   */
   public void handleButton(ActionEvent actionEvent) throws IOException {
 
     Stage stage = (Stage) backButton.getScene().getWindow();

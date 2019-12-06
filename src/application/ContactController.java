@@ -19,6 +19,10 @@ public class ContactController {
   @FXML
   private TextField notesField;
 
+  /**
+   * This function gets the data from the fields to create a new contact.
+   * @return
+   */
   Contact getNewContact() {
     String firstName = firstNameField.getText();
     String lastName = lastNameField.getText();
@@ -37,6 +41,10 @@ public class ContactController {
     return contact;
   }
 
+  /**
+   * This function edits the contacts.
+   * @param contact
+   */
   void editContact(Contact contact) {
     firstNameField.setText(contact.getFirstName());
     lastNameField.setText(contact.getLastName());
@@ -44,6 +52,10 @@ public class ContactController {
     notesField.setText(contact.getNotes());
   }
 
+  /**
+   * This function updates the contacts.
+   * @param contact
+   */
   void updateContact(Contact contact) {
     contact.setFirstName(firstNameField.getText());
     contact.setLastName(lastNameField.getText());
@@ -62,6 +74,11 @@ public class ContactController {
 
   }
 
+  /**
+   * This function checks if the phone number value is valid using regex.
+   * @param phoneNumber
+   * @return
+   */
   private boolean phoneNumberIsValid(String phoneNumber) {
     boolean isValid = false;
     if (phoneNumber.matches("[0-9]{3}-[0-9]{3}-[0-9]{4}") || phoneNumber.matches("[0-9]{10}")) {
