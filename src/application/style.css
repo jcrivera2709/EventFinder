@@ -125,14 +125,31 @@
   -fx-font-size: 10pt;
   -fx-background-color: linear-gradient(lightgreen, #178027);
 }
+
 .combo-box-popup .list-view .list-cell:filled:hover {
   -fx-background-color: #617ce6;
 }
 
-#eventIDText{
+#eventIdText {
   -fx-fill: white, silver;
   -fx-font-weight: bold;
   -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.5), 0, 0, 0, 1);
 }
 
+#usernameText {
+  -fx-fill: white, silver;
+  -fx-font-weight: bold;
+  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.5), 0, 0, 0, 1);
+}
 
+#newPasswordText {
+  -fx-fill: white, silver;
+  -fx-font-weight: bold;
+  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.5), 0, 0, 0, 1);
+}
+
+#confirmPasswordText {
+  -fx-fill: white, silver;
+  -fx-font-weight: bold;
+  -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.5), 0, 0, 0, 1);
+}

@@ -11,6 +11,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
@@ -23,13 +24,15 @@ public class Createaccount {
   public TextField newPassword;
   public Button createAccountButton;
   public Button backButton;
+  public Text usernameText;
+  public Text newPasswordText;
+  public Text confirmPasswordText;
 
   /**
-   *
-   * @param actionEvent
-   * @throws IOException
-   *
    * This function creates user accounts.
+   *
+   * @param actionEvent gets the actions from the scenes.
+   * @throws IOException throws ioexception.
    */
   public void createAccount(ActionEvent actionEvent) throws IOException {
 
@@ -42,12 +45,11 @@ public class Createaccount {
 
     if (isPasswordValid(password, confirmPass)) {
 
-        String appendData = String
-                .format("\n%s,%s" , username, password);
+      String appendData = String
+          .format("\n%s,%s", username, password);
 
-        bw.write(appendData);
-        bw.close();
-
+      bw.write(appendData);
+      bw.close();
 
 
     } else {
