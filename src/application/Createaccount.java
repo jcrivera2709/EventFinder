@@ -15,7 +15,9 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
- * @author Jose Ruiz-Ramon, Jose Rivera
+ * Creates a new user account and adds it to the CSV file, only a normal user.
+ *
+ * @author Jose Ruiz-Ramon, José Rivera
  */
 public class Createaccount {
 
@@ -63,9 +65,10 @@ public class Createaccount {
 
   /**
    * This function checks if the password is valid.
-   * @param password
-   * @param confirmPass
-   * @return
+   *
+   * @param password    is the password the user wants
+   * @param confirmPass is the confirmation password
+   * @return true if the password is the same as confirm password.
    */
   private boolean isPasswordValid(String password, String confirmPass) {
     boolean match = false;
@@ -77,8 +80,9 @@ public class Createaccount {
 
   /**
    * This function is the event handler for stage switching.
-   * @param actionEvent
-   * @throws IOException
+   *
+   * @param actionEvent checks for action event on scene
+   * @throws IOException throws ioexception.
    */
   public void handleButton(ActionEvent actionEvent) throws IOException {
 

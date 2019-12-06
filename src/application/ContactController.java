@@ -5,7 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
 /**
- *  Created by Neel Patel on 10/27/19.
+ * Created by Neel Patel on 10/27/19.
  */
 
 public class ContactController {
@@ -21,6 +21,7 @@ public class ContactController {
 
   /**
    * This function gets the data from the fields to create a new contact.
+   *
    * @return
    */
   Contact getNewContact() {
@@ -43,7 +44,8 @@ public class ContactController {
 
   /**
    * This function edits the contacts.
-   * @param contact
+   *
+   * @param contact gets contact info.
    */
   void editContact(Contact contact) {
     firstNameField.setText(contact.getFirstName());
@@ -54,7 +56,8 @@ public class ContactController {
 
   /**
    * This function updates the contacts.
-   * @param contact
+   *
+   * @param contact gets contact info.
    */
   void updateContact(Contact contact) {
     contact.setFirstName(firstNameField.getText());
@@ -76,8 +79,9 @@ public class ContactController {
 
   /**
    * This function checks if the phone number value is valid using regex.
-   * @param phoneNumber
-   * @return
+   *
+   * @param phoneNumber is the phone number the user passed.
+   * @return true if the number string matches regex, false otherwise.
    */
   private boolean phoneNumberIsValid(String phoneNumber) {
     boolean isValid = false;
