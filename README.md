@@ -1,4 +1,4 @@
-# EventFinder
+# Event Finder
 
 Team: TUESDAY 5
 Members: [LastName, FirstName][Alphabetical by LastName]
@@ -9,7 +9,11 @@ Members: [LastName, FirstName][Alphabetical by LastName]
 (4) Rivera, José
 (5) Ruiz-Ramon, Jose
 
-This program allows user to connect by having an admin login and display events (clubs, parties, among other things). While a regular user is able to view the events, its details, as well as add/edit/delete contacts to keep track of their friends information that you meet at these events. The program provides easy access to other screens especially the login screen to allow the user to change access from admin to regular user for different features. 
+This program allows users to connect by having an admin login and display events (club meetings, parties, among other things). While a regular user is able to view the events, its details, as well as add/edit/delete contacts to keep track of their friends information that you meet at these events. The program provides easy access to other screens especially the login screen to allow the user to change access from admin to regular user for different features. 
+
+Video link of running program: https://drive.google.com/open?id=1v-2MX6tLgFqHpNxfIYlXz3UgH69zQktb
+
+
 
 Installation instructions:
 
