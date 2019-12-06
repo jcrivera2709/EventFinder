@@ -256,7 +256,7 @@ public class AdminMenu {
     // if not scene is selected the default scene will be the main menu.
     if (actionEvent.getSource() == eventsButton) {
       stage = (Stage) eventsButton.getScene().getWindow();
-      root = FXMLLoader.load(getClass().getResource("bulletin.fxml"));
+      root = FXMLLoader.load(getClass().getResource("bulletinAdmin.fxml"));
     } else {
       root = FXMLLoader.load(getClass().getResource("AdminMenu.fxml"));
     }
