@@ -21,7 +21,7 @@ class CsvToData {
   static HashMap<String, String> setData(boolean isAdmin) {
     HashMap<String, String> dataHashMap = new HashMap<>();
 
-    File data = new File("src\\Application\\emptyFile.csv");
+    File data;
 
     try {
 
