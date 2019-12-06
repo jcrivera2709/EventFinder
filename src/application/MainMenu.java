@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
@@ -19,6 +20,7 @@ public class MainMenu {
   public Button graphsButton;
   public Button loginMenuButton;
   public Button contactsButton;
+  public Text mainMenuText;
 
   /**
    * This function handles the events inside this window.

@@ -2,12 +2,14 @@ package application;
 
 import java.io.IOException;
 import java.util.HashMap;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class Login {
@@ -18,6 +20,10 @@ public class Login {
 
   public HashMap<String, String> admins = CsvToData.setData(true); // for admin accounts
   public HashMap<String, String> users = CsvToData.setData(false); // for user accounts
+  public Text userTxt;
+  public Text passwordTxt;
+  public Text loginTxt;
+  public Button createAccountButton;
 
   public void initialize() {
 
@@ -29,7 +35,7 @@ public class Login {
    *
    * @throws IOException throws exception
    */
-  public void logInButton() throws IOException {
+  public void handleButton(ActionEvent actionEvent) throws IOException {
 
     Stage stage = null;
     Parent root = null;
@@ -44,6 +50,9 @@ public class Login {
         .equals(admins.get(userField.getText()))) {
       stage = (Stage) loginButton.getScene().getWindow();
       root = FXMLLoader.load(getClass().getResource("AdminMenu.fxml"));
+    } else if (actionEvent.getSource() == createAccountButton) {
+      stage = (Stage) createAccountButton.getScene().getWindow();
+      root = FXMLLoader.load(getClass().getResource("createaccount.fxml"));
     } else {
       stage = (Stage) loginButton.getScene().getWindow();
       root = FXMLLoader.load(getClass().getResource("Login.fxml"));
@@ -58,5 +67,4 @@ public class Login {
     stage.show();
 
   }
-
 }

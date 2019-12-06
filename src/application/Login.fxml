@@ -8,24 +8,27 @@
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Login">
-  <children>
-    <PasswordField fx:id="pwField" layoutX="226.0" layoutY="236.0" />
-    <TextField fx:id="userField" layoutX="226.0" layoutY="175.0" />
-    <Text fx:id="userTxt" fontSmoothingType="LCD" layoutX="101.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username:">
-         <font>
-            <Font name="SansSerif Italic" size="24.0" />
-         </font></Text>
-    <Text fx:id="passwordTxt" fontSmoothingType="LCD" layoutX="103.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:">
-         <font>
-            <Font name="SansSerif Italic" size="24.0" />
-         </font></Text>
-    <Text fx:id="loginTxt" fontSmoothingType="LCD" layoutX="174.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login Page">
-         <font>
-            <Font name="SansSerif Italic" size="56.0" />
-         </font></Text>
-    <Button fx:id="loginButton" layoutX="458.0" layoutY="236.0" mnemonicParsing="false" onAction="#logInButton" text="Log In">
-         <font>
-            <Font name="SansSerif Italic" size="13.0" />
-         </font></Button>
-  </children>
+  <PasswordField fx:id="pwField" layoutX="226.0" layoutY="236.0" />
+  <TextField fx:id="userField" layoutX="226.0" layoutY="175.0" />
+  <Text fx:id="userTxt" fontSmoothingType="LCD" layoutX="101.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username:">
+    <font>
+      <Font name="SansSerif Italic" size="24.0" />
+    </font>
+  </Text>
+  <Text fx:id="passwordTxt" fontSmoothingType="LCD" layoutX="103.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:">
+    <font>
+      <Font name="SansSerif Italic" size="24.0" />
+    </font>
+  </Text>
+  <Text fx:id="loginTxt" fontSmoothingType="LCD" layoutX="174.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login Page">
+    <font>
+      <Font name="SansSerif Italic" size="56.0" />
+    </font>
+  </Text>
+  <Button fx:id="loginButton" layoutX="458.0" layoutY="236.0" mnemonicParsing="false" onAction="#handleButton" text="Log In">
+    <font>
+      <Font name="SansSerif Italic" size="13.0" />
+    </font>
+  </Button>
+  <Button fx:id="createAccountButton" layoutX="460.0" layoutY="298.0" mnemonicParsing="false" onAction="#handleButton" text="Create Account" />
 </AnchorPane>
